@@ -1,9 +1,11 @@
 body {
+	margin: 0;
 	background-color: rgba(63,174,143,1);
 	min-width: 100px;
 }
 
 header {
+	margin-top: 1vh;
 	z-index: 5;
 	background: linear-gradient(45deg,rgba(139,187,184,0.8),rgba(139,187,144,0.8));
 	text-align: center;
@@ -94,6 +96,56 @@ header {
 	margin: 2rem;
 	margin-bottom: 20vh;
 	font-size: 2vw; 
+}
+
+#softool {
+	font-family: Copperplate, Papyrus, fantasy;
+	padding: 10vh 0vw;
+	background: rgba(71,254,161,0.85);
+	width: 100%;
+	text-align: center;
+	font-size: 2.5vh;
+}
+
+#softlist {
+	font-family: "JetBrains Mono", monospace;
+	font-weight: bolder;
+	text-align: center;
+	width: 80vw;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background: rgba(250,173,78,1);
+	padding: 4vh 5vw;
+	border-radius: 4vh;
+	border: 1vh solid rgba(100,100,100,0.1);
+	
+
+}
+
+.psoft {
+	font-size: 2vh;
+	font-weight: normal;
+	transition: transform 0.25s ease-in;
+}
+
+.psoft:hover {
+	transform: scale(1.05);
+}
+
+.softimg {
+	border: 2px solid;
+	border-radius: 1vh;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	transition: transform 0.25s ease-in;
+
+}
+
+.softimg:hover {
+	transform: scale(0.97);
+	outline: 2vh solid rgba(110,110,110,0.5);
 }
 
 #TnCm {
