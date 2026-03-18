@@ -15,6 +15,8 @@ header {
 	border: 7px solid rgba(172,255,182,0.9);
 	border-radius: 15px;
 	position: fixed;
+	backdrop-filter: blur(7px);
+	-webkit-backdrop-filter: blur(7px);
 }
 
 #usrname {
@@ -110,6 +112,8 @@ header {
 	border: 5px solid rgba(255,173,184,0.85);
 	border-radius: 25px;
 	font-size: 3.5vw;
+	backdrop-filter: blur(7px);
+	-webkit-backdrop-filter: blur(7px);
 
 }
 
@@ -123,6 +127,8 @@ header {
 	font-style: monospace;
 	font-size: 2vh;
 	transition: transform 1s ease;
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
 }
 
 #TnC:hover {
