@@ -99,13 +99,29 @@ header {
 	width: 5vh;
 	height: 5vh;
 	background: rgba(1,1,1,0.5);
-	margin-bottom: 25vh;
+	
 	margin-left: 85vw;
 	margin-right: 5vw;
 	border: 1vw solid rgba(100,100,100,0.2);
 	outline: 0.5vh solid rgba(110,110,110,0.2);
 	border-radius: 25px;
+	transition: transform 0.25s;
 
+}
+
+@keyframes peaces {
+	0% {outline: 0.5vh solid rgba(110,110,110,0.2);}
+	25% {outline: 0.7vh solid rgba(73,255,15,0.8);}
+	50% {outline: 0.7vh solid rgba(222,255,43,0.8); transform: scale(1.025);}
+	75% {outline: 0.7vh solid rgba(12,247,255,0.8)}
+	100% {outline: 0.5vh solid rgba(110,110,110,0.2);}
+
+}
+
+#peace:hover {
+	animation-name: peaces;
+	animation-duration: 0.5s;
+	transform: scale(0.975);
 
 }
 
@@ -219,7 +235,7 @@ header {
 	padding: 45px;
 	border: 12px solid rgba(255,218,176,0.75);
 	outline: 10px solid rgba(255,255,255,0.25);
-	transform: scale(1.001)
+	transform: scale(1.001);
 }
 
 
