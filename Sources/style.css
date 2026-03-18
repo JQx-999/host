@@ -97,7 +97,8 @@ header {
 }
 
 #TnCm {
-
+	
+	font-family: Copperplate, Papyrus, fantasy;
 	position: sticky;
 	z-index: 3;
 	top: 10vh;
