@@ -15,8 +15,8 @@ header {
 	border: 7px solid rgba(172,255,182,0.9);
 	border-radius: 15px;
 	position: fixed;
-	backdrop-filter: blur(7px);
-	-webkit-backdrop-filter: blur(7px);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 }
 
 #usrname {
@@ -112,8 +112,8 @@ header {
 	border: 5px solid rgba(255,173,184,0.85);
 	border-radius: 25px;
 	font-size: 3.5vw;
-	backdrop-filter: blur(7px);
-	-webkit-backdrop-filter: blur(7px);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 
 }
 
