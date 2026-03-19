@@ -63,8 +63,11 @@ header {
 }
 
 @keyframes pfimgz {
-	0% {transform: scale(1); outline: 1vh solid rgba(0,0,0,0.1)}
+	0% {transform: scale(1); outline: 1vh solid rgba(0,0,0,0.1);}
+	25% {transform: scale(1.1); outline: 1vh solid #5EFF71;}
+	35% {outline: 1.5vh solid #FF2155;}
 	50% {transform: scale(1.2); outline: 2vh solid #E417FF;}
+	60% {outline: 1.5vh solid #FF2121;}
 	75% {transform: scale(1.1); outline: 1vh solid #42D9FF;}
 	100% {transform: scale(1.21); outline: 2vh solid rgba(0,0,0,0.2);}
 }
