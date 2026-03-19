@@ -39,24 +39,33 @@ header {
 	margin-left: auto;
 	margin-right: auto;
 	border: 1vh solid rgba(75,240,194,0.75);
-	border-radius: 50px;
+	
+	border-radius: 5vh;
 	outline: 1vh solid rgba(0,0,0,0.1);
 	margin-top: 15vh;
 	transition: transform 0.5s ease-out;
 }
 
-#pfimg:hover {
-	transform: scale(1.21);
+@keyframes pfimgz {
+	0% {transform: scale(1); outline: 1vh solid rgba(0,0,0,0.1)}
+	50% {transform: scale(1.2); outline: 2vh solid #E417FF;}
+	75% {transform: scale(1.1); outline: 1vh solid #42D9FF;}
+	100% {transform: scale(1.21); outline: 2vh solid rgba(0,0,0,0.2);}
 }
 
 #pfimg:hover {
+	animation-name: pfimgz;
+	animation-duration: 0.5s;
+	transform: scale(1.21);
 	outline: 2vh solid rgba(0,0,0,0.2);
 }
 
+
 @keyframes pfButton {
-	0% {background: yellow;}
-	50% {background: rgba(97,255,35,1);}
-	100% {background: rgba(255,110,110,0.5);};
+	0% {background: ,#E417FF;}
+	50% {background: #d8ff17; transform: scale(1.01);}
+	75% {transform: scale(0.95);}
+	100% {background: rgba(255,110,110,1); transform: scale(1)};
 }
 
 #pf {
@@ -83,7 +92,7 @@ header {
 	transform: scale(1.04);
 	background: linear-gradient(270deg, rgba(97,255,35,1), rgba(255,110,110,1));
 	border: 1vh solid rgba(217,150,88,1);
-	outline: 10px solid rgba(100,100,100,0.65);
+	outline: 1vh solid rgba(100,100,100,0.65);
 }
 
 #peace {
@@ -173,6 +182,7 @@ header {
 }
 
 .softimg {
+	width: 80vw;
 	border: 2px solid;
 	border-radius: 1vh;
 	display: block;
