@@ -75,7 +75,7 @@ header {
 #pfimg:hover {
 	z-index: 1;
 	animation-name: pfimgz;
-	animation-duration: 1.5s;
+	animation-duration: 1.25s;
 	transform: scale(1.21);
 	outline: 2vh solid rgba(0,0,0,0.2);
 }
