@@ -37,6 +37,7 @@ header {
 }
 
 #usrname {
+	z-index: 1;
 	text-align: center;
 	font-size: 4rem;
 	font-family: "JetBrains Mono", monospace;
@@ -47,6 +48,7 @@ header {
 }
 
 #pfimg {
+	z-index: 1;
 	width: 30vh;
 	height: 30vh;
 	display: block;
@@ -68,6 +70,7 @@ header {
 }
 
 #pfimg:hover {
+	z-index: 2;
 	animation-name: pfimgz;
 	animation-duration: 0.5s;
 	transform: scale(1.21);
