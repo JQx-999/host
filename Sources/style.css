@@ -1,7 +1,14 @@
 body {
 	margin: 0;
-	background-color: rgba(63,174,143,1);
+	background: #2F134F;
+	
 	min-width: 100px;
+}
+
+#upper {
+	background: #2F134F;
+	background-image: linear-gradient(65deg,rgba(47, 19, 79, 1)90%, rgba(79, 59, 19, 1));
+	display: block;
 }
 
 h1 {transition: transform 0.15s ease-in;}
@@ -10,18 +17,18 @@ h1:hover {transform: scale(1.02);}
 
 #bar:link, #bar:visited {
 	text-decoration: none;
-	color: rgba(255,255,255,0.9);
+	color: rgba(225,225,225,0.9);
 }
 
 #bar:hover, #bar:active {
 	text-decoration: underline;
-	color: rgba(255,255,255,1);
+	color: rgba(255,255,225,1);
 }
 
 header {
 	margin-top: 1vh;
 	z-index: 5;
-	background: linear-gradient(45deg,rgba(139,187,184,0.8),rgba(139,187,144,0.8));
+	background: linear-gradient(45deg,rgba(255, 134, 48, 0.45), rgba(255, 23, 131, 0.45));
 	text-align: center;
 	color: rgba(255,255,255,1);
 	left: 50px;
@@ -29,7 +36,7 @@ header {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 1.5vh;
 	
-	border: 7px solid rgba(172,255,182,0.9);
+	border: 7px solid rgba(237,130,159,0.7);
 	border-radius: 15px;
 	position: fixed;
 	backdrop-filter: blur(12px);
@@ -77,40 +84,66 @@ header {
 	animation-name: pfimgz;
 	animation-duration: 0.8s;
 	transform: scale(1.21);
-	outline: 2vh solid rgba(0,0,0,0.2);
+	outline: 2vh solid rgba(100,100,100,0.4);
 }
 
+@keyframes pfini {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.95);
+		outline: 1vw solid #FF8378;
+	}
+	100% {
+		transform: scale(1);
+	}
+}
 
-@keyframes pfButton {
-	0% {background: ,#E417FF;}
-	50% {background: #d8ff17; transform: scale(1.01);}
-	75% {transform: scale(0.95);}
-	100% {background: rgba(255,110,110,1); transform: scale(1)};
+@keyframes pfhover {
+	0% {
+		transform: scale(0.9);
+		outline: 1vw solid #81FF42;
+	}
+	50% {
+		transform: scale(1.1);
+		outline: 1.5vw solid #FF426E;
+	}
+	100% {
+		transform: scale(1.05);
+		outline: 1.25vw solid rgba(100,100,100,0.5);
+	}
 }
 
 #pf {
-	font-size: 2.5vh;
-	animation-name: pfButton;
+	animation-name: pfini;
 	animation-duration: 1s;
-	text-align: center;
+	background: linear-gradient(45deg,rgba(255, 136, 66, 1) 0%, rgba(197, 23, 255, 1) 100%);
 	font-family: "JetBrains Mono", monospace;
-	background: linear-gradient(45deg,rgba(97,255,35,1),rgba(255,110,110,1));
-	border: 1vh solid rgba(255,163,76,1);
-	border-radius: 50px;
 	font-weight: bold;
-	transition: transform 1s ease-out;
-	padding: 2vh;
-	margin: 17vw;
-	margin-top: 50px;
+	font-size: 2vh;
+	color: #4F258A;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	width: 30vw;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1vh;
 	margin-bottom: 15vh;
+	padding: 2vh 2vw;
+	border: 1vh solid;
+        border-color: linear-gradient(45deg,rgba(148, 66, 255, 1), rgba(162, 255, 23, 1));
+	border-radius: 2vh;
+	transition: transform 0.25s ease-out;
+		
 }
 
-#pf:hover {
-	
-	transform: scale(1.04);
-	background: linear-gradient(270deg, rgba(97,255,35,1), rgba(255,110,110,1));
-	border: 1vh solid rgba(217,150,88,1);
-	outline: 1vh solid rgba(100,100,100,0.65);
+#pf:hover, #pf:active {
+	animation-name: pfhover;
+	animation-duration: 0.5s;
+	transform: scale(1.05);
+	outline: 1.25vw solid rgba(100,100,100,0.5);
 }
 
 #peace {
@@ -162,15 +195,21 @@ header {
 	margin: 2rem;
 	margin-bottom: 20vh;
 	font-size: 2vw; 
+	color: rgba(200,200,200,0.9);
 }
 
 #softool {
 	font-family: Copperplate, Papyrus, fantasy;
 	padding: 10vh 0vw;
-	background: rgba(71,254,161,0.85);
+	background: rgba(21,56,41,0.4);
 	width: 100%;
 	text-align: center;
 	font-size: 2.5vh;
+	color: rgba(200,200,200,0.75);
+}
+
+#list {
+	color: rgba(50,50,50,1);
 }
 
 #softlist {
@@ -193,6 +232,7 @@ header {
 	font-size: 2vh;
 	font-weight: normal;
 	transition: transform 0.25s ease-in;
+	color: rgba(50,50,50,1);
 }
 
 .psoft:hover {
@@ -220,7 +260,7 @@ header {
 	font-family: Copperplate, Papyrus, fantasy;
 	position: sticky;
 	z-index: 3;
-	top: 10vh;
+	top: 12vh;
 	text-align: center;
 	color: rgba(255,255,255,0.9);
 	text-shadow: 2px 3px rgba(1,1,1,0.5);
@@ -268,6 +308,7 @@ header {
 
 
 footer {
+	color: white;
 	z-index: 4;
 	font-size: 2vh;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -278,5 +319,5 @@ footer {
 	padding-top: 25px;
 	margin-right: 10px;
 	margin-left: 10px;
-	background: rgba(177,255,172,0.7);
+	background: #21150C;
 }
