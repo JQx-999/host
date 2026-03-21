@@ -120,7 +120,7 @@ header {
 
 #htui {
 	font-family: "Raleway", sans-serif;
-	padding: 10vh 10vw 10vh 10vw;
+	padding: 10vh 10vw 15vh 10vw;
 	background: linear-gradient(45deg,rgba(113, 27, 171, 0.4) 2%, rgba(140, 35, 35, 0.5) 100%);
 }
 
