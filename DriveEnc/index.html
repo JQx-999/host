@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Drive Encryptor</title>
+		<link rel="stylesheet" href="Sources/style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<p id="top"></p>
+		<header>
+			<h1><a id="hit" href="#top">Drive Encryptor</a></h1>
+		</header>
+		<p id="desc";>A bash script for automating the task of encrypting a drive with LUKS.</p>
+		
+		<img id="image" src="Sources/img1.png" alt="Working Screenshot">
+
+		<section id="reqd">	
+		
+
+		
+			<h2>Required Dependencies:</h2>
+		
+			<p>For Debian/Ubuntu:</p>
+			<pre class="code">sudo dnf install cryptsetup git e2fsprogs btrfs-progs dosfstools ntfs-3g fuse</pre>
+		
+			<p>For Fedora:</p>
+			<pre class="code">sudo dnf install cryptsetup git e2fsprogs btrfs-progs dosfstools ntfs-3g fuse</pre>
+
+			<p>For Arch Linux:</p>
+			<pre class="code">sudo pacman -Sy cryptsetup git e2fsprogs btrfs-progs dosfstools ntfs-3g</pre>
+
+			
+			<p>Can only be used in Linux</p>
+
+		</section>
+		
+		<section id="main">
+			<h2>Use the following code to use it :</h2>
+			<pre class="code">
+git clone https://github.com/JQx-999/Drive-Encryptor.git
+cd Drive-Encryptor/Encryptor && bash ./main</pre>
+		</section>
+		<section id="prep">
+			<h2>Preparation:</h2>
+			<p>Backup everything from the target drive that you wanna encrypt. This code is designed to destroy the drive/partition. It has no warranty. YOU ARE AT YOUR OWN RISK. Make sure to unmount the drive before use. The script uses cryptsetup to encrypt using LUKS. This only works on linux. You will need specific packages to format to specific file format. ext4: e2fsprogs, btrfs: btrfs-progs, fat32: dosfstools, ntfs: ntfs3. I recommend you using a safe 14 character password. But it's upto you cuz I myself use 4 digit password tbh. This code only automates the work. It is designed to make the drive accessible to everyone. You could change the permissions afterwards. I made this code for my personal convenience, you may choose to use it.</p>
+		</section>
+		
+
+		<section id="htui">
+			<h2>How to use it?</h2>
+
+			<h3>Step 1:</h3>
+			<p>Install the required dependencies.</p>
+
+			<h3>Step 2:</h3>
+			<p>Then use the code provided below to use the script.</p>
+
+			<h3>Step 3:</h3>
+			<p>This script will first ask about the partition. Suppose I want to encrypt sda2. So I will type "sda2" and nothing else. </p>
+
+			<h3>Step 4:</h3>
+			<p>Then it will open the cryptsetup to encrypt the drive. Type "YES" as prompted. </p>
+
+			<h3>Step 5:</h3>
+			<p>Choose a STRONG password for your drive. It will ask again for the passoword to open the drive.</p>
+			<h3>Step 6:</h3>
+			<p>Choose the specific file format if prompted.</p>
+
+			<h3>Step 7:</h3>
+			<p>BACKUP the header file (Type Y to continue). Finished.</p>
+		</section>
+		<section id="TnC">
+			<h2>Terms and Conditions:</h2>
+			<p>This project follows GPLv3 license. You can further read it on <a href="https://jqx-999.github.io/host/" alt="Host Website">host</a> website.</p>
+		</section>
+		<footer>
+			<p>(c) JQx-999 2026</p>
+			<p>GitHub Repo: <a id="lin" href="https://github.com/JQx-999/Drive-Encryptor">https://github.com/JQx-999/Drive-Encryptor</a></p>
+		</footer>
+	</body>
+</html>
