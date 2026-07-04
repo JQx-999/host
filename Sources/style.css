@@ -356,7 +356,9 @@ footer {
 
 /* Style for the trigger button */
 .neon-btn {
-	
+	font-family: "JetBrains Mono", monospace;
+	font-weight: bold;
+	font-size: 2vh;
   padding: 12px 24px;
   background: transparent;
   color: #00fff2;
