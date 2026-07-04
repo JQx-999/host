@@ -257,7 +257,7 @@ footer {
 }
 
 .gallery-title {
-  font-size: 2.5rem;
+  font-size: 3vh;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -301,16 +301,17 @@ footer {
 .card-content {
   padding: 20px;
   color: #fff;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .card-content h3 {
   margin: 10px 0;
-  font-size: 1.4rem;
+  font-size: 2vh;
 }
 
 .card-content p {
   color: #b0b0d0;
-  font-size: 0.95rem;
+  font-size: 1.5vh;
   line-height: 1.5;
   margin-bottom: 20px;
 }
@@ -336,6 +337,7 @@ footer {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.2s ease;
+  font-size: 1.2vh;
 }
 
 /* --- THE HOVER HYPES --- */
@@ -370,7 +372,7 @@ footer {
   transition: all 0.2s ease;
 }
 .neon-btn:hover {
-  background: #00fff2;
+  background: #00ff59;
   color: #000;
   box-shadow: 0 0 20px #00fff2;
 }
@@ -378,6 +380,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 20vh 0;
 }
 /* The Dark Backdrop Overlay */
 .modal-overlay {
