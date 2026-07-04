@@ -375,6 +375,7 @@ footer {
   background: #00ff59;
   color: #000;
   box-shadow: 0 0 20px #00fff2;
+	cursor: url('hand2.svg'), pointer;
 }
 #bot {
 	display: flex;
@@ -432,6 +433,7 @@ footer {
 }
 .close-btn:hover {
   color: #ff007f;
+	cursor: url('hand2.svg'), pointer;
 }
 
 /* Pop-in Animation */
