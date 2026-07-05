@@ -32,14 +32,7 @@ a, button, .clickable {
 		transform: scale(1.02);
 	}
 }
-@keyframes main-hover {
-	0% {
-		outline: transparent 2px;
-	}
-	100% {
-		outline: 2px solid #00FF7A;
-	}
-}
+
 
 .top-container {
 	margin: 5vh 2vw;
@@ -122,6 +115,10 @@ a, button, .clickable {
 		position: relative;
 		z-index: 2;
 		animation-duration: 2s;
+		animation-iteration-count: 1;
+	}
+	.btn:hover {
+		outline: solid 2px #b5705c;
 	}
 	h1 {
 		position: relative;
@@ -133,12 +130,78 @@ a, button, .clickable {
 		
 	}
 }
+
+.abit {
+	padding: 0 8vw;
+	margin-top: 0vh;
+	font-family: "Montserrat", sans-serif;
+	display: flex;
+	animation-name: entry;
+	animation-duration: 1s;
+	align-items: center;
+	flex-direction: column;
+	text-align:  left;
+	h2 {
+		
+		font-size: 6vh;
+	}
+	p {
+		margin-top: 3vh;
+		text-align:justify;
+		width: 100%;
+		max-width: 1000px;
+	
+	}
+}
+
+
+.line-in {
+	animation-name: entry;
+		animation-duration: 2s;
+	margin-top: 10vh;
+	position: relative;
+	width: 250px;
+	height: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+@keyframes limma {
+	0% {
+		stroke-dashoffset: 50.25392150878906;
+	}
+	
+	25% {
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dashoffset: -50.25392150878906;
+	}
+	75% {
+		stroke-dashoffset: 0;
+	}
+	100% {
+		stroke-dashoffset: 50.25392150878906;
+	}
+}
+
+
+#path2 {
+	stroke-dasharray: 50.25392150878906;
+	stroke-dashoffset: 50.25392150878906;
+	animation: limma 2s ease-in-out infinite;
+	animation-delay: 1s;
+	
+	
+}
+
 .sh {
 	display: flex;
 	justify-content: center;
 	font-family: "Montserrat", sans-serif;
 	align-items: center;
-	margin-top: 15vh;
+	margin-top: 0vh;
 	font-size: 5vh;
 	animation-name: entry;
 		animation-duration: 0.75s;
@@ -156,7 +219,7 @@ a, button, .clickable {
 }
 
 .showcase {
-	margin-top: 10vh;
+	margin-top: 2vh;
 	
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -169,6 +232,8 @@ a, button, .clickable {
 	padding: 2vw;
 	h2 {
 		font-size: 6vh;
+		max-width: 1000px;
+		width: 100%;
 	}
 }
 .capsule {
@@ -206,6 +271,9 @@ a, button, .clickable {
 		background-color: #FFD386;
 		text-decoration: none;
 		font-weight: bold;
+	}
+	a:hover {
+		outline: solid 2px #77633d;
 	}
 	.add-more {
 		display: flex;
@@ -256,6 +324,9 @@ a, button, .clickable {
 	width: 75px;
 	padding: 0.5vh 0;
 }
+.button-shad:hover {
+		outline: solid 2px #95954ecc;
+	}
 #icon-button0 {
 	background-color: transparent;
 	background-image: url("mail.svg");
@@ -269,6 +340,7 @@ a, button, .clickable {
 	border: transparent;
 	
 }
+
 #icon-button1 {
 	background-color: transparent;
 	background-image: url("github.svg");
@@ -282,6 +354,7 @@ a, button, .clickable {
 	border: transparent;
 	
 }
+
 #icon-button2 {
 	background-color: transparent;
 	background-image: url("terms.svg");
@@ -295,6 +368,7 @@ a, button, .clickable {
 	border: transparent;
 	
 }
+
 #icon-button3 {
 	background-color: transparent;
 	background-image: url("about.svg");
@@ -308,6 +382,7 @@ a, button, .clickable {
 	border: transparent;
 	
 }
+
 
 .signature {
 	position: relative;
