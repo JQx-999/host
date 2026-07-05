@@ -134,7 +134,7 @@ a, button, .clickable {
 
 .abit {
 	padding: 0 8vw;
-	margin-top: 0vh;
+	margin-top: 5vh;
 	font-family: "Montserrat", sans-serif;
 	display: flex;
 	animation-name: entry;
@@ -418,14 +418,14 @@ a, button, .clickable {
 
 @keyframes star-rotate {
 	0% {
-		transform: rotate(0deg);
+		transform: rotate(10deg);
 	}
 	40% {
-		transform: rotate(5deg);
+		transform: rotate(15deg);
 	}
 	
 	100% {
-		transform: rotate(0deg);
+		transform: rotate(10deg);
 	} 
 	
 	
@@ -445,7 +445,7 @@ a, button, .clickable {
 	height: 1px;
 	position: relative;
 	bottom: 15vh;
-	
+	transform: rotate(10deg);
 	display: flex;
 	justify-content: end;
 	z-index: 0;
