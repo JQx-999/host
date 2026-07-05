@@ -209,7 +209,9 @@ a, button, .clickable {
 	}
 }
 .bottom-bar {
-	background-color: #21201F;
+	background-color: #21201FCC;
+	 backdrop-filter: blur(20px);
+  	-webkit-backdrop-filter: blur(20px);
 	position: fixed;
 	display: flex;
 	align-items: center;
