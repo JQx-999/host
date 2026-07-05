@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="16"
+   viewBox="0 0 16 16"
+   width="16"
+   version="1.1"
+   id="svg9"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <g
+     fill="#222222"
+     id="g9"
+     style="fill:#8b7d75;fill-opacity:1">
+    <path
+       d="M 3,1 C 1.355469,1 0,2.355469 0,4 v 7 c 0,1.644531 1.355469,3 3,3 h 3 c 0.5625,0 1,0.4375 1,1 0,0.550781 0.449219,1 1,1 0.550781,0 1,-0.449219 1,-1 C 9,13.355469 7.644531,12 6,12 H 3 C 2.433594,12 2,11.5625 2,11 V 4 C 2,3.4375 2.433594,3 3,3 H 6 C 6.5625,3 7,3.4375 7,4 7,4.550781 7.449219,5 8,5 8.550781,5 9,4.550781 9,4 9,2.355469 7.644531,1 6,1 Z m 0,0"
+       id="path1"
+       style="fill:#8b7d75;fill-opacity:1" />
+    <path
+       d="M 7,4 V 14 H 9 V 4 Z m 0,0"
+       id="path2"
+       style="fill:#8b7d75;fill-opacity:1" />
+    <path
+       d="M 10,1 C 8.355469,1 7,2.355469 7,4 7,4.550781 7.449219,5 8,5 8.550781,5 9,4.550781 9,4 9,3.4375 9.433594,3 10,3 h 3 c 0.5625,0 1,0.4375 1,1 v 7 c 0,0.5625 -0.4375,1 -1,1 h -3 c -1.644531,0 -3,1.355469 -3,3 0,0.550781 0.449219,1 1,1 0.550781,0 1,-0.449219 1,-1 0,-0.5625 0.433594,-1 1,-1 h 3 c 1.644531,0 3,-1.355469 3,-3 V 4 C 16,2.355469 14.644531,1 13,1 Z m 0,0"
+       id="path3"
+       style="fill:#8b7d75;fill-opacity:1" />
+    <path
+       d="M 3,4 H 6 V 5 H 3 Z m 0,0"
+       id="path4"
+       style="fill:#8b7d75;fill-opacity:1" />
+    <path
+       d="M 3,6 H 6 V 7 H 3 Z m 0,0"
+       id="path5"
+       style="fill:#8b7d75;fill-opacity:1" />
+    <path
+       d="M 3,8 H 6 V 9 H 3 Z m 0,0"
+       id="path6"
+       style="fill:#8b7d75;fill-opacity:1" />
+    <path
+       d="m 10,4 h 3 v 1 h -3 z m 0,0"
+       id="path7"
+       style="fill:#8b7d75;fill-opacity:1" />
+    <path
+       d="m 10,6 h 3 v 1 h -3 z m 0,0"
+       id="path8"
+       style="fill:#8b7d75;fill-opacity:1" />
+    <path
+       d="m 10,8 h 2 v 1 h -2 z m 0,0"
+       id="path9"
+       style="fill:#8b7d75;fill-opacity:1" />
+  </g>
+</svg>

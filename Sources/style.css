@@ -1,459 +1,297 @@
 html, body {
   cursor: url('left_ptr.svg'), default;
+  font-size: 2vh;
+  margin: 0;
+  padding: 0;
+  background-color: #0F0E0F;
+  color: #E6E1E3;
 }
 a, button, .clickable {
   cursor: url('hand2.svg'), pointer;
 }
-body {
-	margin: 0;
-	background: #2F134F;
-	
-	min-width: 100px;
-}
-#starfield {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background: #070714; 
-}
 
-#cursor-glow {
-  position: fixed;
-  width: 50px;
-  height: 75px;
-  background: radial-gradient(circle, rgba(0, 149, 255, 0.15) 0%, rgba(0, 255, 242, 0) 70%);
-  border-radius: 50%;
-  pointer-events: none; /* Crucial: clicks pass right through it */
-  z-index: 0; /* Sits right above the star canvas, but underneath text/buttons */
-  transform: translate(-30%, -27%); /* Centers the circle perfectly on the cursor tip */
-  transition: transform 0.05s ease-out; /* Gives it a tiny, smooth trailing lag */
-}
-
-#upper {
-	position: relative;
-  z-index: 1;
-  color: #ffffff;
-	display: block;
-}
-
-h1 {transition: transform 0.15s ease-in;}
-
-h1:hover {transform: scale(1.02);}
-
-#bar:link, #bar:visited {
-	text-decoration: none;
-	color: rgba(225,225,225,0.9);
-}
-
-#bar:hover, #bar:active {
-	text-decoration: underline;
-	color: rgba(255,255,225,1);
-}
-
-header {
-	margin-top: 1vh;
-	z-index: 5;
-	background: linear-gradient(45deg,rgba(255, 134, 48, 0.45), rgba(255, 23, 131, 0.45));
-	text-align: center;
-	color: rgba(255,255,255,1);
-	left: 50px;
-	right: 50px;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 1.5vh;
-	
-	border: 7px solid rgba(237,130,159,0.7);
-	border-radius: 15px;
-	position: fixed;
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
-}
-
-#usrname {
-	z-index: 2;
-	text-align: center;
-	font-size: 4rem;
-	font-family: "JetBrains Mono", monospace;
-	font-weight: bolder;
-	text-shadow: 3px 5px rgba(1,1,1,0.75);
-	color: rgba(255,185,160,1);
-
-}
-
-#pfimg {
-	z-index: 1;
-	width: 100%;
-	height: 100%;
-	max-width: 400px;
-	max-height: 400px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	border: 1vh solid rgba(75,240,194,0.75);
-	
-	border-radius: 5vh;
-	outline: 1vh solid rgba(0,0,0,0.1);
-	margin-top: 15vh;
-	transition: transform 0.5s ease-out;
-}
-
-@keyframes pfimgz {
-	0% {transform: scale(1); outline: 1vh solid rgba(0,0,0,0.1);}
-	25% {transform: scale(1.01); outline: 1vh solid #5EFF71;}
-	35% {outline: 1.5vh solid #FF2155;}
-	50% {transform: scale(1.02); outline: 2vh solid #E417FF;}
-	60% {outline: 1.5vh solid #FF2121;}
-	75% {transform: scale(1.01); outline: 1vh solid #42D9FF;}
-	100% {transform: scale(1.01); outline: 2vh solid rgba(0,0,0,0.2);}
-}
-
-#pfimg:hover {
-	z-index: 1;
-	animation-name: pfimgz;
-	animation-duration: 0.5s;
-	transform: scale(1.01);
-	outline: 1.75vh solid rgba(100,100,100,0.4);
-}
-
-@keyframes pfini {
+@keyframes entry {
 	0% {
-		transform: scale(1);
-	}
-	50% {
-		transform: scale(0.95);
-		outline: 1vw solid #FF8378;
+		transform: translate(0px, 100px);
+		opacity: 0;
 	}
 	100% {
-		transform: scale(1);
+		transform: translate(0, 0);
+		opacity: 1;
 	}
 }
 
-@keyframes pfhover {
+@keyframes img-hover {
 	0% {
-		transform: scale(0.9);
-		outline: 1vw solid #81FF42;
+		transform: scale(1);
 	}
 	50% {
 		transform: scale(1.1);
-		outline: 1.5vw solid #FF426E;
 	}
 	100% {
-		transform: scale(1.05);
-		outline: 1.25vw solid rgba(100,100,100,0.5);
+		transform: scale(1.02);
+	}
+}
+@keyframes main-hover {
+	0% {
+		outline: transparent 2px;
+	}
+	100% {
+		outline: 2px solid #00FF7A;
 	}
 }
 
-#pf {
-	animation-name: pfini;
-	animation-duration: 1s;
-	background: linear-gradient(45deg,rgba(255, 136, 66, 1) 0%, rgba(197, 23, 255, 1) 100%);
-	font-family: "JetBrains Mono", monospace;
-	font-weight: bold;
-	font-size: 2vh;
-	color: #4F258A;
-	text-decoration: none;
-	display: block;
-	text-align: center;
-	width: 100%;
-	max-width: 300px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 1vh;
-	margin-bottom: 15vh;
-	padding: 2vh 2vw;
-	border: 1vh solid;
-        border-color: linear-gradient(45deg,rgba(148, 66, 255, 1), rgba(162, 255, 23, 1));
-	border-radius: 2vh;
-	transition: transform 0.25s ease-out;
-		
-}
-
-#pf:hover, #pf:active {
-	animation-name: pfhover;
-	animation-duration: 0.5s;
-	transform: scale(1.05);
-	outline: 1.25vw solid rgba(100,100,100,0.5);
-}
-
-#peace {
-	backdrop-filter: blur(7px);
-	-webkit-backdrop-filter: blur(7px);
-	position: sticky;
-	z-index: 5;	
-	top: 87vh;
-	text-align: right;
-	z-index: 5;
-	font-size: 4vh;
-	font-family: "JetBrains Mono", monospace;
-	width: 5vh;
-	height: 5vh;
-	background: rgba(1,1,1,0.5);
+.top-container {
+	margin: 5vh 2vw;
+	animation-name: entry;
+		animation-duration: 0.75s;
 	
-	margin-left: 85vw;
-	margin-right: 5vw;
-	border: 1vw solid rgba(100,100,100,0.2);
-	outline: 0.5vh solid rgba(110,110,110,0.2);
-	border-radius: 25px;
-	transition: transform 0.25s;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 10px;
+	align-items: center;
+	.port {
+		background-color: transparent;
 
+		height: 100%;
+		
+		border: transparent;
+		border-radius: 50px;
+		overflow: hidden;
+		position: relative;
+		animation-name: entry;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		transition: transform 0.3s ease;
+	}
+	
+	.pic {
+		margin: 0;
+		background-color: #1C1B1D;
+		background-image: url(profile.jpg);
+		background-size: cover;
+		background-position: center;
+		object-fit: cover;
+		height: 100%;
+		
+		
+		
+		
+		
+		transform: scale(1);
+	}
+	.pic:hover {
+		animation-name: img-hover;
+		animation-duration: 0.5s;
+		transform: scale(1.02);
+	}
+	.nega {
+		margin: 3vh 3vw;
+		p{
+			margin: 7vh 0;
+		}
+	}
+
+	.desc {
+		display: flex;
+		flex-direction: column;
+		font-family: "Montserrat", sans-serif;
+		border: transparent;
+		border-radius: 50px;
+		height: 100%;
+		
+		background-color: #1C1B1D;
+		color: #E6E1E3;
+		h1 {
+			font-size: 8vh;
+		}
+	}
+	.btn {
+		border: transparent;
+		font-family: "Montserrat", sans-serif;
+		border-radius: 100px;
+		background-color: #FF8686;
+		color: #560000;
+		width: max-content;
+		padding: 25px;
+		text-decoration: none;
+		font-weight: bold;
+		animation-name: entry;
+		
+		animation-duration: 2s;
+	}
 }
-
-@keyframes peaces {
-	0% {outline: 0.5vh solid rgba(110,110,110,0.2);}
-	25% {outline: 0.7vh solid rgba(73,255,15,0.8);}
-	50% {outline: 0.7vh solid rgba(222,255,43,0.8); transform: scale(1.025);}
-	75% {outline: 0.7vh solid rgba(12,247,255,0.8)}
-	100% {outline: 0.5vh solid rgba(110,110,110,0.2);}
-
-}
-
-#peace:hover {
-	animation-name: peaces;
-	animation-duration: 0.5s;
-	transform: scale(0.975);
-
-}
-
-#info0 {
-	text-align:center;
-	padding-top: 20px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	padding-left: 50px;
-	padding-right: 50px;
-	margin: 2rem;
-	margin-bottom: 20vh;
-	font-size: 2vw; 
-	color: rgba(200,200,200,0.9);
-}
-
-
-
-
-footer {
-	color: white;
-	z-index: 4;
-	font-size: 2vh;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	border: 5px solid rgba(255,150,72,0.5);
-	border-radius: 5vw 5vw 0 0;
-	text-align: center;
-	margin-top: 50px;
-	padding-top: 25px;
-	margin-right: 10px;
-	margin-left: 10px;
-	background: #21150C;
-}
-/* Container Spacing */
-.projects-container {
-	border: solid;
-	border-radius: 20px;
-	background: rgba(50,50,50,0.25);
-  max-width: 1200px;
-  margin: 20vh auto;
-  padding: 10vh 10vw;
-}
-
-.gallery-title {
-  font-size: 3vh;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 40px;
-  text-shadow: 0 0 10px rgba(0, 255, 242, 0.5);
-}
-
-/* The Responsive Grid */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px; /* Space between cards */
-}
-
-/* The Card Layout */
-.project-card {
-  background: rgba(20, 20, 35, 0.85); /* Slightly translucent to reveal stars behind */
-  border: 3px solid #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 5px 5px 0px #00fff2; /* Neon drop shadow */
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy bounce effect */
-}
-
-/* Image styling */
-.card-image-wrapper {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  border-bottom: 3px solid #fff;
-}
-
-.card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-/* Content Inside the Card */
-.card-content {
-  padding: 20px;
-  color: #fff;
-  font-family: "JetBrains Mono", monospace;
-}
-
-.card-content h3 {
-  margin: 10px 0;
-  font-size: 2vh;
-}
-
-.card-content p {
-  color: #b0b0d0;
-  font-size: 1.5vh;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-/* Playful Dynamic Badges/Tags */
-.project-tag {
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 20px;
-  border: 1px solid #fff;
-}
-.tag-cyan { background: #00fff2; color: #000; }
-.tag-pink { background: #ff007f; color: #000; }
-.tag-lime { background: #39ff14; color: #000; }
-
-/* The Action Link */
-.project-link {
-  display: inline-block;
-  color: #00fff2;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s ease;
-  font-size: 1.2vh;
-}
-
-/* --- THE HOVER HYPES --- */
-.project-card:hover {
-  transform: translate(-5px, -5px); /* Card physically lifts up */
-  box-shadow: 10px 10px 0px #ff007f; /* Shadow grows bigger and changes color! */
-  border-color: #ff007f;
-}
-
-.project-card:hover .card-image {
-  transform: scale(1.05); /* Image subtly zooms in */
-}
-
-.project-card:hover .project-link {
-  color: #ff007f;
+.sh {
+	display: flex;
+	justify-content: center;
+	font-family: "Montserrat", sans-serif;
+	align-items: center;
+	margin-top: 15vh;
+	font-size: 5vh;
+	animation-name: entry;
+		animation-duration: 0.75s;
 }
 
 
-/* Style for the trigger button */
-.neon-btn {
-	font-family: "JetBrains Mono", monospace;
-	font-weight: bold;
-	font-size: 2vh;
-  padding: 12px 24px;
-  background: transparent;
-  color: #00fff2;
-  border: 2px solid #00fff2;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 255, 242, 0.3);
-  transition: all 0.2s ease;
-}
-.neon-btn:hover {
-  background: #00ff59;
-  color: #000;
-  box-shadow: 0 0 20px #00fff2;
-	cursor: url('hand2.svg'), pointer;
-}
-#bot {
+.ss {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 20vh 0;
-}
-/* The Dark Backdrop Overlay */
-.modal-overlay {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(11, 11, 30, 0.85); /* Dark translucent background */
-  backdrop-filter: blur(8px); /* Blurs the starry background beautifully */
-  z-index: 999; /* Sits completely on top of everything */
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+	min-width: 100%;
+	width: 250px;
+	max-width: 100vw;
+	margin-bottom: 10vh;
 }
 
-/* The Actual Pop-up Box */
-.modal-content {
-  background: #141423;
-  border: 3px solid #ff007f; /* Hot pink neon border */
-  padding: 50px 30px 30px 30px;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 90vw;
-  width: 100%;
-  /* --- THE SCROLL MAGIC CHEAT CODE --- */
-  max-height: 85vh; /* Never lets the modal take up more than 85% of screen height */
-  overflow-y: auto; /* Adds a clean vertical scrollbar only if content overflows! */
-  position: relative;
-  color: #fff;
-  box-shadow: 0 0 30px rgba(255, 0, 127, 0.4);
-  text-align: center;
-  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Fun bounce entry */
+.showcase {
+	margin-top: 10vh;
+	
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 50px;
+	max-width: 1000px;
+	width: 100%;
+	
+	align-items: center;
+	font-family: "Montserrat", sans-serif;
+	padding: 2vw;
+	h2 {
+		font-size: 6vh;
+	}
+}
+.capsule {
+	animation-name: entry;
+		animation-duration: 1.5s;
+	background-color: #1C1B1D;
+	border: transparent;
+	border-radius: 50px;
+	overflow: hidden;
+	padding-bottom: 10vh;
+	height: 80%;
+	.rote {
+		margin: 3vh 3vw;
+	}
+	.card-image {
+		min-width: 100%;
+		width: 500px;
+		max-height: auto;
+		
+	}
+	.card-image:hover {
+		animation-name: img-hover;
+		animation-duration: 0.75s;
+		transform: scale(1.02);
+	}
+	p {
+		margin-bottom: 5vh;
+	}
+	a {
+		color: #563500;
+		border: transparent;
+		border-radius: 100px;
+		width: max-content;
+		padding: 25px;
+		background-color: #FFD386;
+		text-decoration: none;
+		font-weight: bold;
+	}
+	.add-more {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-size: 2.5vh;
+		text-align: center;
+		.plus {
+			font-size: 20vh;
+		}
+	}
+}
+.bottom-bar {
+	background-color: #21201F;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: row;
+	bottom: 0;
+	width: 100%;
+	z-index: 999;
+	font-size: 1vh;
+	font-weight: bold;
+	padding: 1vh 0;
+	animation-name: entry;
+		animation-duration: 0.5s;
 }
 
-/* The X Close Button */
-.close-btn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: #b0b0d0;
-  font-size: 2rem;
-  cursor: pointer;
-  transition: color 0.2s;
-  z-index: 1000;
+.button {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	font-family: "Montserrat", sans-serif;
+	align-items: center;
+	overflow: visible;
 }
-.close-btn:hover {
-  color: #ff007f;
-	cursor: url('hand2.svg'), pointer;
+.button-shad {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #5A4D45;
+	border: transparent;
+	border-radius: 100px;
+	width: 75px;
+	padding: 0.5vh 0;
 }
-
-/* Pop-in Animation */
-@keyframes popIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+#icon-button0 {
+	background-color: transparent;
+	background-image: url("mail.svg");
+	
+	background-size:100%;
+	background-position: center;
+	overflow: visible;
+	color: transparent;
+	width: 32px;
+	height: 32px;
+	border: transparent;
+	
 }
-
-/* Utility class to display the modal via JavaScript */
-.modal-overlay.active {
-  display: flex;
+#icon-button1 {
+	background-color: transparent;
+	background-image: url("github.svg");
+	
+	background-size:100%;
+	background-position: center;
+	overflow: visible;
+	color: transparent;
+	width: 32px;
+	height: 32px;
+	border: transparent;
+	
 }
-.modal-content::-webkit-scrollbar {
-  width: 8px;
+#icon-button2 {
+	background-color: transparent;
+	background-image: url("terms.svg");
+	
+	background-size:100%;
+	background-position: center;
+	overflow: visible;
+	color: transparent;
+	width: 32px;
+	height: 32px;
+	border: transparent;
+	
 }
-.modal-content::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-}
-.modal-content::-webkit-scrollbar-thumb {
-  background: #ff007f;
-  border-radius: 10px;
+#icon-button3 {
+	background-color: transparent;
+	background-image: url("about.svg");
+	
+	background-size:100%;
+	background-position: center;
+	overflow: visible;
+	color: transparent;
+	width: 32px;
+	height: 32px;
+	border: transparent;
+	
 }
