@@ -94,6 +94,7 @@ a, button, .clickable {
 	}
 
 	.desc {
+		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		font-family: "Montserrat", sans-serif;
@@ -118,8 +119,18 @@ a, button, .clickable {
 		text-decoration: none;
 		font-weight: bold;
 		animation-name: entry;
-		
+		position: relative;
+		z-index: 2;
 		animation-duration: 2s;
+	}
+	h1 {
+		position: relative;
+		z-index: 2;
+	}
+	p {
+		position: relative;
+		z-index: 2;
+		
 	}
 }
 .sh {
@@ -296,4 +307,33 @@ a, button, .clickable {
 	height: 32px;
 	border: transparent;
 	
+}
+
+.signature {
+	position: relative;
+	left: 25vw;
+	width: 1px;
+	height: 1px;
+	transform: scale(2.5);
+	z-index: 0;
+	opacity: 0.75;
+}
+
+@keyframes draw {
+	0% {
+		stroke-dashoffset: 276.3114318847656;
+	}
+	50% {
+		stroke-dashoffset: 0;
+	}
+	100% {
+		stroke-dashoffset: 276.3114318847656
+	}
+}
+
+#path1 {
+	stroke-dasharray: 276.3114318847656;
+	stroke-dashoffset: 276.3114318847656;
+	animation: draw 10s ease-in-out infinite;
+	animation-delay: 1.5s;
 }
