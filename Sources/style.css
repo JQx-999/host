@@ -37,9 +37,9 @@ a, button, .clickable {
 
 .top-container {
 	margin: 5vh 2vw;
-	animation-name: entry;
-		animation-duration: 0.75s;
-	
+	animation: entry 0.75s ease-in-out both;
+		animation-trigger: --t play-forward;
+		timeline-trigger: --t view() entry 100% exit 0% ;
 	display: grid;
 	grid-template-columns: 5fr 1fr;
 	gap: 10px;
@@ -53,9 +53,10 @@ a, button, .clickable {
 		border-radius: 50px;
 		overflow: hidden;
 		position: relative;
-		animation-name: entry;
-		animation-duration: 1s;
-		animation-iteration-count: 1;
+		animation: entry 0.75s ease-in-out both;
+		animation: entry 0.75s ease-in-out both;
+		animation-trigger: --t play-once;
+		timeline-trigger: --t view() entry 100% exit 0% ;
 		animation-fill-mode: forwards;
 		transition: transform 0.3s ease;
 	}
@@ -137,8 +138,9 @@ a, button, .clickable {
 	margin-top: 5vh;
 	font-family: "Montserrat", sans-serif;
 	display: flex;
-	animation-name: entry;
-	animation-duration: 1s;
+	animation: entry 0.75s ease-in-out both;
+	animation-trigger: --t play-forwards play-backwards;
+	timeline-trigger: --t view();
 	align-items: center;
 	flex-direction: column;
 	text-align:  left;
@@ -206,8 +208,9 @@ a, button, .clickable {
 	align-items: center;
 	margin-top: 0vh;
 	font-size: 5vh;
-	animation-name: entry;
-		animation-duration: 0.75s;
+	animation: entry 0.75s ease-in-out both;
+		animation-trigger: --t play-once;
+		timeline-trigger: --t view() entry 100% exit 0% ;
 }
 
 
@@ -240,8 +243,9 @@ a, button, .clickable {
 	}
 }
 .capsule {
-	animation-name: entry;
-		animation-duration: 1.5s;
+	animation: entry 0.75s ease-in-out both;
+		animation-trigger: --t play-once;
+		timeline-trigger: --t view() entry 100% exit 0% ;
 	background-color: #1C1B1D;
 	border: transparent;
 	border-radius: 50px;
@@ -469,12 +473,13 @@ a, button, .clickable {
 .pure {
 	
 	height: 20vh;
-	animation-name: entry;
-	animation-duration: 1s;
+	animation: entry 0.75s ease-in-out both;
+		animation-trigger: --t play-once;
+		timeline-trigger: --t view() entry 100% exit 0% ;
 	font-family: "Montserrat", sans-serif;
 	background-color: #1d1c1b;
 	margin: 0 2vw;
-	;
+	
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -490,8 +495,10 @@ a, button, .clickable {
 }
 .copyright {
 	height: 20vh;
-	animation-name: entry;
-	animation-duration: 1s;
+	animation: entry 0.75s ease-in-out both;
+		animation-trigger: --t play-once;
+		timeline-trigger: --t view() entry 100% exit 0% / entry 0% exit 100%;
+		animation-iteration-count: 1;
 	font-family: "Montserrat", sans-serif;
 	background-color: #1d1c1b;
 	background-image: linear-gradient(45deg,rgba(255, 102, 0, 1) 2%, rgba(166, 0, 255, 1) 100%);
