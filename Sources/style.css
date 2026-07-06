@@ -325,7 +325,7 @@ a, button, .clickable {
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
 	.bottom-bar {
 		flex-direction: column;
 		left: 0;
