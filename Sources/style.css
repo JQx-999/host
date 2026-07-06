@@ -150,9 +150,7 @@ a, button, .clickable {
 		font-size: 6vh;
 	}
 	p {
-		animation: entry 0.75s ease-in-out both;
-		animation-trigger: --t play-forwards play-backwards;
-		timeline-trigger: --t view() entry 100% exit 0% ;
+		
 		margin-top: 3vh;
 		text-align:justify;
 		width: 100%;
@@ -248,7 +246,7 @@ a, button, .clickable {
 .capsule {
 	animation: entry 0.75s ease-in-out both;
 		animation-trigger: --t play-once;
-		timeline-trigger: --t view() entry 100% exit 0% ;
+		timeline-trigger: --t view() entry 50% exit 0% ;
 	background-color: #1C1B1D;
 	border: transparent;
 	border-radius: 50px;
