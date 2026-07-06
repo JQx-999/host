@@ -462,6 +462,8 @@ a, button, .clickable {
 	stroke-dasharray: 276.3114318847656;
 	stroke-dashoffset: 276.3114318847656;
 	animation: draw1 5s ease-in-out forwards;
+	animation-trigger: --t play-forwards play-backwards;
+		timeline-trigger: --t view() entry 100% exit 0% ;
 	
 }
 
