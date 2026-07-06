@@ -229,14 +229,14 @@ a, button, .clickable {
 	margin-top: 2vh;
 	
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	gap: 50px;
 	max-width: 1000px;
 	width: 100%;
 	
 	align-items: center;
 	font-family: "Montserrat", sans-serif;
-	padding: 2vw;
+	padding: 8vw;
 	h2 {
 		font-size: 6vh;
 		max-width: 1000px;
@@ -252,7 +252,9 @@ a, button, .clickable {
 	border-radius: 50px;
 	overflow: hidden;
 	padding-bottom: 10vh;
-	height: 80%;
+	
+	height: max-content;
+
 	.rote {
 		margin: 3vh 3vw;
 	}
@@ -290,6 +292,8 @@ a, button, .clickable {
 		align-items: center;
 		font-size: 2.5vh;
 		text-align: center;
+		height: 35vh;
+		padding-bottom: 5vh;
 		.plus {
 			font-size: 20vh;
 		}
@@ -343,8 +347,24 @@ a, button, .clickable {
 	}
 	.top-container {
 		margin-bottom: 14vh;
+		grid-template-columns: 3fr 1fr;
 	}
-	
+	.showcase {
+		grid-template-columns: 1fr 1fr;
+		padding: 2vw;
+	}
+	.capsule {
+		height: 55vh;
+	}
+	.card-image {
+		height: 35vh;
+	}
+	.add-more {
+		height: 35vh;
+	}
+	.plus {
+		font-size: 100vh;
+	}
 }
 
 .button {
@@ -448,15 +468,15 @@ a, button, .clickable {
 		stroke-dashoffset: 0;
 	}
 	100% {
-		stroke-dashoffset: 276.3114318847656
+		stroke-dashoffset: -276.3114318847656
 	}
 }
 
 #path1 {
 	stroke-dasharray: 276.3114318847656;
 	stroke-dashoffset: 276.3114318847656;
-	animation: draw 10s ease-in-out infinite;
-	animation-delay: 1.5s;
+	animation: draw 5s ease-in-out infinite;
+	animation-delay: 0.75s;
 }
 
 @keyframes star-rotate {
