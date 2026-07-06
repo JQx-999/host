@@ -314,6 +314,39 @@ a, button, .clickable {
 		animation-duration: 0.5s;
 }
 
+@keyframes entry-left {
+	0% {
+		transform: translate(-100px, 0px);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+}
+
+@media (min-width: 768px) {
+	.bottom-bar {
+		flex-direction: column;
+		left: 0;
+		height: 100vh;
+		width: 75px;
+		justify-content: center;
+		padding: 0 0.7vw;
+		animation-name: entry-left;
+	}
+	.button {
+		padding: 1vh 0;
+	}
+	body {
+		padding-left: 100px;
+	}
+	.top-container {
+		margin-bottom: 12vh;
+	}
+	
+}
+
 .button {
 	display: flex;
 	justify-content: center;
@@ -321,6 +354,11 @@ a, button, .clickable {
 	font-family: "Montserrat", sans-serif;
 	align-items: center;
 	overflow: visible;
+}
+.button-icon:hover {
+	animation-name: img-hover;
+		animation-duration: 0.25s;
+		transform: scale(1.02);
 }
 .button-shad {
 	display: flex;
