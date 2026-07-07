@@ -44,6 +44,7 @@ a, button, .clickable {
 	grid-template-columns: 5fr 1fr;
 	gap: 10px;
 	align-items: center;
+	
 	.port {
 		background-color: transparent;
 
@@ -245,15 +246,18 @@ a, button, .clickable {
 }
 .capsule {
 	animation: entry 0.75s ease-in-out both;
-		animation-trigger: --t play-once;
-		timeline-trigger: --t view() entry 50% exit 0% ;
+	
+	animation-trigger: --t play-once;
+	timeline-trigger: --t view() entry 50% exit 0% ;
 	background-color: #1C1B1D;
 	border: transparent;
 	border-radius: 50px;
 	overflow: hidden;
-	padding-bottom: 10vh;
-	
+	padding-bottom: 15vh;
+	transform: translate(0, 0);
+		box-shadow:none;
 	height: max-content;
+
 
 	.rote {
 		margin: 3vh 3vw;
@@ -262,7 +266,8 @@ a, button, .clickable {
 		min-width: 100%;
 		width: 500px;
 		max-height: auto;
-		
+		object-fit: cover;
+		object-position: center;
 	}
 	.card-image:hover {
 		animation-name: img-hover;
@@ -299,6 +304,40 @@ a, button, .clickable {
 		}
 	}
 }
+@keyframes capsule-hover {
+	0% {
+		transform: translate(0, 0);
+		box-shadow:none;
+	}
+	100% {
+		transform: translate(0, -5px);
+		box-shadow: 0 5px 20px 2.5px rgba(255,255,255,0.2);
+	}
+}
+@keyframes capsule-unhover {
+	0% {
+		transform: translate(0, -5px);
+		box-shadow: 0 5px 20px 2.5px rgba(255,255,255,0.2);
+	}
+	100% {
+		transform: translate(0, 0);
+		box-shadow:none;
+	}
+	
+}
+.capsule:hover {
+	animation: capsule-hover 0.25s ease-in-out;
+	transform: translate(0, -5px);
+	box-shadow: 0 5px 20px 2.5px rgba(255,255,255,0.2);
+}
+
+.capsule:not(:hover) {
+	animation: capsule-unhover 0.25s ease-in-out;
+	transform: translate(0, 0);
+		box-shadow:none;
+	
+}
+
 .bottom-bar {
 	background-color: #21201FCC;
 	 backdrop-filter: blur(20px);
