@@ -450,7 +450,7 @@ a, button, .clickable {
 	border: transparent;
 	border-radius: 100px;
 	width: 50px;
-	padding: 0.5vh 0;
+	padding: 0.75vh 0;
 }
 .button-shad:hover {
 		outline: solid 2px #95954ecc;
