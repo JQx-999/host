@@ -10,6 +10,36 @@ html, body {
 a, button, .clickable {
   cursor: url('hand2.svg'), pointer;
 }
+@font-face {
+	font-family: "Montserrat";
+	src: url('fonts/Montserrat-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-size: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url('fonts/Montserrat-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-size: bold;
+	font-display: swap;
+}
+
+
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url('fonts/JetBrainsMono-regular.woff2') format('woff2');
+	font-weight: 400;
+	font-size: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url('fonts/JetBrainsMono-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-size: bold;
+	font-display: swap;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,
