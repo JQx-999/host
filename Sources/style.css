@@ -427,44 +427,7 @@ a, button, .clickable {
 	}
 }
 
-@media (min-width: 1200px) {
-	.bottom-bar {
-		flex-direction: column;
-		left: 0;
-		height: 100vh;
-		width: 75px;
-		justify-content: center;
-		padding: 0 0.7vw;
-		animation-name: entry-left;
-	}
-	.button {
-		padding: 1vh 0;
-	}
-	body {
-		padding-left: 100px;
-	}
-	.top-container {
-		margin-bottom: 14vh;
-		grid-template-columns: 3fr 1fr;
-	}
-	.showcase {
-		grid-template-columns: 1fr 1fr;
-		padding: 2vw;
-	}
-	.capsule {
-		height: 58vh;
-		padding-bottom: 15vh;
-	}
-	.card-image {
-		height: 35vh;
-	}
-	.add-more {
-		height: 35vh;
-	}
-	.plus {
-		font-size: 100vh;
-	}
-}
+
 
 .button {
 	display: flex;
@@ -486,7 +449,7 @@ a, button, .clickable {
 	background-color: #5A4D45;
 	border: transparent;
 	border-radius: 100px;
-	width: 75px;
+	width: 50px;
 	padding: 0.5vh 0;
 }
 .button-shad:hover {
@@ -500,8 +463,8 @@ a, button, .clickable {
 	background-position: center;
 	overflow: visible;
 	color: transparent;
-	width: 32px;
-	height: 32px;
+	width: 16px;
+	height: 16px;
 	border: transparent;
 	
 }
@@ -514,8 +477,8 @@ a, button, .clickable {
 	background-position: center;
 	overflow: visible;
 	color: transparent;
-	width: 32px;
-	height: 32px;
+	width: 16px;
+	height: 16px;
 	border: transparent;
 	
 }
@@ -528,8 +491,8 @@ a, button, .clickable {
 	background-position: center;
 	overflow: visible;
 	color: transparent;
-	width: 32px;
-	height: 32px;
+	width: 16px;
+	height: 16px;
 	border: transparent;
 	
 }
@@ -542,8 +505,8 @@ a, button, .clickable {
 	background-position: center;
 	overflow: visible;
 	color: transparent;
-	width: 32px;
-	height: 32px;
+	width: 16px;
+	height: 16px;
 	border: transparent;
 	
 }
@@ -554,7 +517,7 @@ a, button, .clickable {
 	left: 25vw;
 	width: 1px;
 	height: 1px;
-	transform: scale(2.5);
+	transform: scale(1.2);
 	z-index: 0;
 	opacity: 0.75;
 }
@@ -676,5 +639,65 @@ a, button, .clickable {
 	font-size: 3vh;
 	p {
 		padding: 3vw;
+	}
+}
+@media (min-width: 1200px) {
+	.signature {
+		transform: scale(2.5);
+	}
+	.bottom-bar {
+		flex-direction: column;
+		left: 0;
+		height: 100vh;
+		width: 75px;
+		justify-content: center;
+		padding: 0 0.7vw;
+		animation-name: entry-left;
+	}
+	#icon-button0 {
+		width: 32px;
+		height: 32px;
+	}
+	#icon-button1 {
+		width: 32px;
+		height: 32px;
+	}
+	#icon-button2 {
+		width: 32px;
+		height: 32px;
+	}
+	#icon-button3 {
+		width: 32px;
+		height: 32px;
+	}
+	.button {
+		padding: 1vh 0;
+	}
+	.button-shad {
+		width: 75px;
+	}
+	body {
+		padding-left: 100px;
+	}
+	.top-container {
+		margin-bottom: 14vh;
+		grid-template-columns: 3fr 1fr;
+	}
+	.showcase {
+		grid-template-columns: 1fr 1fr;
+		padding: 2vw;
+	}
+	.capsule {
+		height: 58vh;
+		padding-bottom: 15vh;
+	}
+	.card-image {
+		height: 35vh;
+	}
+	.add-more {
+		height: 35vh;
+	}
+	.plus {
+		font-size: 100vh;
 	}
 }
