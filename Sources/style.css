@@ -354,6 +354,8 @@ a, button, .clickable {
 .tags {
 	display: flex;
 	p {
+		font-family: "JetBrains Mono", monospace;
+		font-weight: bold;
 		margin-top: 0;
 		margin-bottom: 0;
 		background: rgba(167, 104, 22, 0.268);
