@@ -317,6 +317,10 @@ a, button, .clickable {
 	}
 	p {
 		margin-bottom: 5vh;
+		
+	}
+	h3 {
+		margin-bottom: 1vh;
 	}
 	a {
 		color: #563500;
@@ -347,6 +351,19 @@ a, button, .clickable {
 	}
 }
 
+.tags {
+	display: flex;
+	p {
+		margin-top: 0;
+		margin-bottom: 0;
+		background: rgba(167, 104, 22, 0.268);
+		padding: 0.5vh 10px;
+		border: transparent;
+		border-radius: 100px;
+		font-size: 1.5vh;
+		margin-right: 10px;
+	}
+}
 
 .bottom-bar {
 	background-color: #21201FCC;
@@ -403,7 +420,7 @@ a, button, .clickable {
 		padding: 2vw;
 	}
 	.capsule {
-		height: 55vh;
+		height: 58vh;
 		padding-bottom: 15vh;
 	}
 	.card-image {
