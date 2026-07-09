@@ -190,7 +190,7 @@ a, button, .clickable {
 }
 
 .abit {
-	padding: 0 8vw;
+	padding: 0 5vw;
 	margin-top: 5vh;
 	font-family: "Montserrat", sans-serif;
 	display: flex;
@@ -205,8 +205,7 @@ a, button, .clickable {
 		
 		font-size: 6vh;
 	}
-	p {
-		
+	p {	
 		margin-top: 3vh;
 		text-align:justify;
 		width: 100%;
