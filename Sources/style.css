@@ -640,7 +640,7 @@ a, button, .clickable {
 		animation-iteration-count: 1;
 	font-family: "Montserrat", sans-serif;
 	.odia {
-		font-family: "NotoSansOdia", sans-serif;
+		font-family: "Montserrat", "NotoSansOdia", sans-serif;
 	}
 	background-color: #1d1c1b;
 	background-image: linear-gradient(45deg,rgba(255, 102, 0, 1) 2%, rgba(166, 0, 255, 1) 100%);
