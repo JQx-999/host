@@ -710,6 +710,9 @@ a, button, .clickable {
 		height: 58vh;
 		padding-bottom: 15vh;
 	}
+	#add-more-capsule {
+		display: none;
+	}
 	.card-image {
 		height: 35vh;
 	}
