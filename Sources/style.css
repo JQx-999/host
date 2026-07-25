@@ -431,7 +431,7 @@ a, button, .clickable {
 	z-index: 999;
 	font-size: 1vh;
 	font-weight: bold;
-	padding: 1vh 5vw;
+	padding: 1vh 5vw 0.25vh 5vw;
 	margin-bottom: 2vw;
 	border: solid 2px #5a4d4534;
 	border-radius: 45px;
