@@ -1,267 +1,216 @@
 body {
-
+	background: rgba(255, 249, 237, 1);
 	margin: 0;
-	background-image: linear-gradient(45deg,rgb(23, 2, 1) 30%, rgb(10, 0, 2) 100%);
-	color: rgba(200,200,200,0.9);
 	padding: 0;
-	padding-top: 1vh;
 	text-align: center;
-	font-size: 2vh;
+	font-family: 'Raleway', sans-serif;
 }
-h2 {
-	font-size: 4vh;
-}
-header {
+#top-bar {
 	display: flex;
-	position: sticky;
-	font-family: "Merriweather", serif;
-	text-align: center;
-	font-weight: lighter;
-	top: 1vh;	
-	margin: auto;
-	z-index: 5;
-	
-	left: auto;
-	right: auto;
-	width: 95%;
-
-	flex-direction: row;
+	align-items: center;
 	justify-content: center;
-	background: rgba(69, 55, 35, 0.334);
-	color: rgba(200,200,200,0.9);
-	border: 1vw solid;
-	border-color: rgba(96, 21, 7, 0.5);
-	border-radius: 1vh;
-
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
-	transform: scale(1);
-}
-#hit:link, #hit:visited {
-	color: rgba(200,200,200,0.9);
-	text-decoration: none;
+	font-family: 'Raleway', sans-serif;
+	padding: 10px;
+	height: 15vh;
+	margin-top: -10px;
 	
 }
-#hit:hover, #hit:active {
-	animation-name: hit;
-	animation-duration: 1s;
-	transform: scale(1.1);
-	text-shadow: 2px 3px black;
-}
-#desc {
-	margin: 5vh 10vw;
-}
-@keyframes imageh {
-	0% {transform: scale(1); outline: 0.9vh solid rgba(100,100,100,0.2);}
-	25% {transform: scale(1.01); outline: 1vh solid rgb(196, 31, 31);}
-	50% {transform: scale(1.02); outline: 1vh solid rgba(130, 31, 196, 1);}
-	75% {transform: scale(1.01); outline: 1vh solid rgba(196, 155, 31, 1);}
-	100% {transform: scale(1.015); outline: 1.1vh solid rgba(100,100,100,0.2);}
-}
-
-#image {
-	border: 1vw solid rgba(100,100,100,0.5);
+#top-content {
+	position: fixed;
+	backdrop-filter: blur(20px);
+  	-webkit-backdrop-filter: blur(20px);
+	max-width: 85vw;
+	width: 650px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255, 202, 105, 0.75);
 	border-radius: 25px;
-	margin: 10vh 0vw;
-	transition: transform 0.35s ease-in;
-	transition: outline 0.25s ease-in;
+	box-shadow: 0px 5px 20px rgba(163, 129, 67, 1);
+	outline: solid 5px rgba(255, 255, 255, 0.25);
 }
-#image:hover {
-	animation-name: imageh;
-	animation-duration: 0.35s;
-	transform: scale(1.01);
-	outline: 1.1vh solid rgba(100,100,100,0.2);
+h1 {
+	padding: 0 10px;
+	color: rgb(134, 105, 54);
 }
-@keyframes pfini {
-	0% {
-		transform: scale(1);
-	}
-	50% {
-		transform: scale(0.95);
-		outline: 1vw solid #FF8378;
-	}
-	100% {
-		transform: scale(1);
-	}
+#main-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 50px;
+	
 }
+#image{
+	max-width: 90vw;
+	width: 700px;
+	border-radius: 25px;
+	box-shadow: 0px 5px 20px rgba(163, 129, 67, 1);
+	outline: solid 5px rgba(255, 255, 255, 0.25);
+}
+#main-text{
+	padding-top: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+p{
+	max-width: 80vw;
+	width: 500px;
+}
+#main-button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-@keyframes pfhover {
-	0% {
-		transform: scale(0.9);
-		outline: 1vw solid #81FF42;
-	}
-	50% {
-		transform: scale(1.1);
-		outline: 1.5vw solid #FF426E;
-	}
-	100% {
-		transform: scale(1.05);
-		outline: 1.25vw solid rgba(100,100,100,0.5);
-	}
 }
-
-#buttons {
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    align-content: space-between;
-    gap: 2vh;
-    margin-bottom: 40vh;
-}
-
-#pf {
-	animation-name: pfini;
-	animation-duration: 1s;
-	background: linear-gradient(45deg,rgba(255, 136, 66, 1) 0%, rgba(197, 23, 255, 1) 100%);
-	font-family: "JetBrains Mono", monospace;
-	font-weight: bold;
-	font-size: 2vh;
-	color: #4F258A;
+#main-button a {
+	background-color: antiquewhite;
+	color: rgb(134, 105, 54);
+	padding: 20px;
+	border-radius: 25px;
 	text-decoration: none;
-	
-	text-align: center;
-	width: 30vw;
-	
-	padding: 2vh 2vw;
-	border: 1vh solid;
-        border-color: linear-gradient(45deg,rgba(148, 66, 255, 1), rgba(162, 255, 23, 1));
-	border-radius: 2vh;
-	transition: transform 0.25s ease-out;
-		
-}
-
-#pf:hover, #pf:active {
-	animation-name: pfhover;
-	animation-duration: 0.5s;
-	transform: scale(1.05);
-	outline: 1.25vw solid rgba(100,100,100,0.5);
-}
-@keyframes pfini1 {
-	0% {
-		transform: scale(1);
-	}
-	50% {
-		transform: scale(0.95);
-		outline: 1vw solid #00e1ff;
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-
-@keyframes pfhover1 {
-	0% {
-		transform: scale(0.9);
-		outline: 1vw solid #ff8513;
-	}
-	50% {
-		transform: scale(1.1);
-		outline: 1.5vw solid #0649ff;
-	}
-	100% {
-		transform: scale(1.05);
-		outline: 1.25vw solid rgba(100,100,100,0.5);
-	}
-}
-#pf1 {
-	animation-name: pfini1;
-	animation-duration: 1s;
-	background: linear-gradient(45deg,rgb(110, 66, 255) 0%, rgb(23, 255, 42) 100%);
-	font-family: "JetBrains Mono", monospace;
 	font-weight: bold;
-	font-size: 2vh;
-	color: #4F258A;
-	text-decoration: none;
-	display: block;
-	text-align: center;
-	width: 30vw;
+	box-shadow: 0px 5px 10px rgba(185, 146, 75, 0.452);
 	
-	padding: 2vh 2vw;
-	border: 1vh solid;
-        border-color: linear-gradient(45deg,rgba(148, 66, 255, 1), rgba(162, 255, 23, 1));
-	border-radius: 2vh;
-	transition: transform 0.25s ease-out;
-		
 }
-
-#pf1:hover, #pf1:active {
-	animation-name: pfhover1;
-	animation-duration: 0.5s;
-	transform: scale(1.05);
-	outline: 1.25vw solid rgba(100,100,100,0.5);
+#main-button a:hover {
+	outline: solid 5px rgba(10, 10, 10, 0.15);
 }
-hr {
-    opacity: 0;
+#panel-2{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-
-#vidmid {
-    background-image: linear-gradient(45deg,rgba(113, 27, 171, 0.75) 2%, rgba(129, 140, 35, 0.75) 100%);
-	margin: 2vw;
-	margin-top: 5vh;
-	font-size: 2vh;
-	border: 1vh solid rgba(200,200,200,0.5);
-	border-radius: 1.5vh;
-	font-family: "Raleway", sans-serif;
-	padding: 5vh 0vw 10vh 0vw;
+#main-video{
+	margin: 50px 2vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10vh 0;
+	background-color: rgba(255, 202, 105, 0.15);
+	border-radius: 25px;
+	max-width: 95vw;
+	width: 1000px;
 }
-
-#vid {
-    border: 1vw solid rgba(100,100,100,0.25);
-    border-radius: 25px;
-    margin: 5vh 1vw;
-    max-width: 85vw;
+#main-video h2{
+	padding-bottom: 50px;
+	color: rgb(190, 150, 76);
 }
-#reqd {
-	background-image: linear-gradient(45deg,rgba(128, 90, 63, 0.75) 2%, rgba(109, 30, 161, 0.75) 100%);
-	margin: 2vw;
-	margin-top: 5vh;
-	font-size: 2vh;
-	border: 1vh solid rgba(200,200,200,0.5);
-	border-radius: 1.5vh;
-	font-family: "Raleway", sans-serif;
-	padding: 5vh 0vw 10vh 0vw;
-    p {
-        margin: 1vh 10vw;
-    }
-
+#video{
+	max-width: 90vw;
+	width: 700px;
+	border-radius: 25px;
+	box-shadow: 0px 5px 20px rgba(163, 129, 67, 1);
+	outline: solid 5px rgba(255, 255, 255, 0.25);
+	margin-bottom: 50px;
 }
-#prep {
-    margin-top: 10vh;
-    font-family: "Raleway", sans-serif;
-	padding: 10vh 10vw 15vh 10vw;
-	background: rgba(200,200,200,0.25);
-    
+#panel-3{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-
-#htui {
-	font-family: "Raleway", sans-serif;
-	padding: 10vh 10vw 15vh 10vw;
-	background: linear-gradient(45deg,rgba(171, 27, 87, 0.4) 2%, rgba(140, 121, 35, 0.5) 100%);
+#requirements{
+	margin: 50px 2vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: rgba(255, 202, 105, 0.15);
+	border-radius: 25px;
+	max-width: 95vw;
+	width: 1000px;
+	padding: 10vh 0;
 }
-.code {
-	font-size: 1.72vh;
-	font-family: "JetBrains Mono", monospace;
-	background-color: rgba(10,10,10,1);
-	
-    display: flex;
-    justify-content: center;
-    align-items: center;
-	margin: 0 5%;
-	padding: 1.5vh;
-	overflow: auto;
-	
-	border: 0.5vw solid rgba(100,100,100,0.7);
-	border-radius: 1vh;
-	text-shadow: 0.5vh 0.5vw rgba(110,110,110,0.4);	
+#requirements h2{
+	padding-bottom: 25px;
+	color: rgb(190, 150, 76);
 }
-
-#TnC {
-	padding: 10vh 5vw;
+.code{
+	background-color: rgba(50, 50, 50, 0.904);
+	color: rgb(252, 233, 198);
+	box-shadow: 0px 5px 20px rgba(163, 129, 67, 1);
+	outline: solid 5px rgba(255, 255, 255, 0.25);
+	border-radius: 25px;
+	padding: 25px;
+	max-width: 75vw;
+	width: 500px;
+	font-family: 'JetBrains Mono', monospace;
+	text-shadow: 2px 2px rgba(252, 233, 198, 0.5);
 }
-footer {
-	background: rgba(150,150,150,0.25);
-	margin-bottom: 0;
-	margin-top: 10vh;
-	padding: 2.4vh;
+#panel-4{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(10, 10, 10, 0.05);
+	padding: 50px 0;
+}
+#preparations h2{
+	padding-bottom: 25px;
+	color: rgb(190, 150, 76);
+}
+#panel-5{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(54, 54, 54, 0.164);
+	padding: 50px 0;
+}
+#panel-5 h2{
+	padding-bottom: 15px;
+	color: rgb(190, 150, 76);
+}
+#panel-5 h3{
+	padding-bottom: 0px;
+	color: rgb(194, 157, 89);
+}
+#panel-6{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(10, 10, 10, 0.05);
+	padding: 50px 0;
+}
+#panel-6 h2{
+	padding-bottom: 15px;
+	color: rgb(190, 150, 76);
+}
+#panel-7{
+	height: 50vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+#panel-7 p{
+	margin: 0;
+	padding: 10px 0;
+}
+#copyright{
+	font-size: 50px;
+	font-weight: bold;
+	padding-bottom: 15px;
+	color: rgb(230, 181, 90);
+}
+@media (min-width: 1200px) {
+	#panel-7{
+		flex-direction: row;
+	}
+	#main{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 100px;
+		margin-top: 50px;
+	}
+	#main-text{
+		margin: 0 100px;
+	}
+	#main-button{
+		margin-top: 25px;
+	}
 }
