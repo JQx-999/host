@@ -50,7 +50,7 @@ html, body {
   background-color: #0F0E0F;
   color: #E6E1E3;
   scroll-behavior: smooth;
-  font-family: "Montserrat", serif;
+  font-family: sans-serif, serif;
 }
 .side-bar{
 	margin-top: 0;
