@@ -1,0 +1,141 @@
+@font-face {
+	font-family: "Montserrat";
+	src: url('fonts/Montserrat-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-size: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url('fonts/Montserrat-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-size: bold;
+	font-display: swap;
+}
+
+
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url('fonts/JetBrainsMono-regular.woff2') format('woff2');
+	font-weight: 400;
+	font-size: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url('fonts/JetBrainsMono-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-size: bold;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "NotoSansOdia";
+	src: url('fonts/NotoSansOriya-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-size: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "NotoSansOdia";
+	src: url('fonts/NotoSansOriya-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-size: bold;
+	font-display: swap;
+}
+html, body {
+  
+  margin: 0;
+  padding: 0;
+  background-color: #0F0E0F;
+  color: #E6E1E3;
+  scroll-behavior: smooth;
+  font-family: "Montserrat", serif;
+}
+.side-bar{
+	margin-top: 0;
+}
+.contents {
+	
+	background-color: rgb(81, 42, 107);
+	width: 100vw;
+	margin: 0;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	justify-content: space-between;
+}
+.content h2 {
+	padding: 2vw;
+	color: white;
+}
+.content a {
+	text-decoration: none;
+}
+.content p {
+
+	color: white;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.1);
+	margin: 0;
+}
+
+.contents .links a{
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: white;
+	padding: 0 10px ;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+.links img {
+	margin-right: 12px;
+	height: 20px;
+}
+.fallback {
+	background-color: rgba(196, 25, 25, 0.555);
+	margin:0;
+	
+}
+.main-content{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 10vh;
+}
+.part-1{
+	width: 80vw;
+}
+.part-2{
+	width: 80vw;
+}
+.part-3{
+	width: 80vw;
+}
+.formal {
+	overflow: auto;
+}
+@media (min-width: 1200px) {
+	.contents {
+		height: 100vh;
+		width: 20vw;
+		position: fixed;
+		margin: 0;
+	}
+	.main-content{
+		margin-left: 30vw;
+		margin-top: 0;
+		padding-top: 10vh;
+	}
+	.part-1{
+		width: 50vw;
+	}
+	.part-2{
+		width: 50vw;
+	}
+	.part-3{
+		width: 50vw;
+	}
+}
