@@ -78,6 +78,10 @@ h1 {
 #search-form {
     width: 70%;
 }
+#search-input {
+    background-color: var(--stat-color);
+    color: var(--text-primary);
+}
 #spotify {
     width: 100%;
 }
