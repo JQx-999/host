@@ -113,3 +113,9 @@ themeBtn.addEventListener('click', () => {
   themeLabel.textContent = isLight ? 'Dark Mode' : 'Light Mode';
   localStorage.setItem('dashboard-theme', isLight ? 'light' : 'dark');
 })
+document.addEventListener('keydown', (e) => {
+  if (e.key === '/') {
+    e.preventDefault();
+    document.querySelector('input[name="q"]').focus();
+  }
+});

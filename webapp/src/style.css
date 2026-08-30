@@ -69,6 +69,15 @@ h1 {
     padding: 0;
     max-width: 100%;
 }
+#search {
+    max-height: 200px;
+    max-width: 100%;
+    padding: 0;
+    align-items: center;
+}
+#search-form {
+    width: 70%;
+}
 #spotify {
     width: 100%;
 }
@@ -127,6 +136,15 @@ h2 {
         justify-content: center;
         align-items: center;
     }
+    #search {
+        grid-column: span 2;
+        max-width: 100%;
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 @media only screen and (min-width: 900px) {
     .content {
@@ -151,7 +169,15 @@ h2 {
         justify-content: center;
         align-items: center;
     }
-
+    #search {
+        grid-column: span 3;
+        max-width: 100%;
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .item {

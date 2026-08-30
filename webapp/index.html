@@ -113,7 +113,20 @@
                 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/7J1uxwnxfQLu4APicE5Rnj?utm_source=generator&si=3490032b4c0541ce" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </div>
+        <div class="card" id="search">
+            <h2>Search</h2>
+            <form id="search-form" action="https://www.google.com/search" method="GET" target="_blank" >
+              <input
+                type="text"
+                name="q"
+                placeholder="Search Google..."
+                required
+                style="padding: 10px; border-radius: 25px; border: 5px solid rgba(200, 200, 200, 0.10); background: rgba(255,255,255,0.1); color: white; width: 100%; margin:0;"
+              />
+            </form>
+        </div>
     </div>
+
     <script src="src/script.js"></script>
 </body>
 </html>
