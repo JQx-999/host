@@ -109,7 +109,7 @@ if (savedTheme === 'light') {
 themeBtn.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
   const isLight = document.body.classList.contains('light-mode');
-  themeIcon.textContent = isLight ? '☀️' : '🌙';
-  themeLabel.textContent = isLight ? 'Light Mode' : 'Dark Mode';
+  themeIcon.textContent = isLight ? '🌙' : '☀️';
+  themeLabel.textContent = isLight ? 'Dark Mode' : 'Light Mode';
   localStorage.setItem('dashboard-theme', isLight ? 'light' : 'dark');
 })
