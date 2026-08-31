@@ -384,6 +384,8 @@ h3 {
   color: var(--text-primary);
   margin: 0;
   line-height: 1.2;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bolder;
 }
 .news-desc {
   font-size: 0.75rem;
