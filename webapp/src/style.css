@@ -214,6 +214,16 @@ h2 {
     overflow: scroll;
     display: block;
 }
+#stats h2 {
+    padding-bottom: 0;
+}
+#stats #scroll-text {
+    padding: 0;
+    font-weight: bold;
+    color: var(--stat-color);
+    padding-bottom: 65px;
+    font-size: 15px;
+}
 #stats h3 {
     margin: 0;
     margin-top: 25px;
