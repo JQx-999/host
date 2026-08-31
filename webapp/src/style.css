@@ -11,7 +11,7 @@ body, html {
     --bg-base: rgb(25, 25, 25);
     --bg-base-gradient: linear-gradient(90deg,rgba(38, 19, 0, 1) 0%, rgba(31, 0, 0, 1) 100%);
     --text-primary: white;
-    --card-background: rgba(255, 255, 255, 0.1);
+    --card-background: rgba(255, 240, 204, 0.1);
     --weather-color: rgba(200, 200, 200, 1);
     --stat-color: rgba(255, 255, 255, 0.25);
 }
@@ -19,7 +19,7 @@ body.light-mode {
   --bg-base: #f3f4f6;
   --bg-base-gradient: linear-gradient(90deg,rgba(255, 237, 217, 1) 0%, rgba(255, 227, 227, 1) 100%);
   --text-primary: #111827;
-  --card-background: rgba(100, 100, 100, 0.1);
+  --card-background: rgba(75, 70, 50, 0.1);
   --stat-color: rgba(0, 0, 0, 0.25);
 }
 body {
@@ -88,6 +88,7 @@ h1 {
     box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.15);
     animation: card-hover 0.15s ease-in;
     transform: scale(1.025);
+    outline: solid 3px rgba(150, 150, 150, 0.25);
 }
 #last {
     max-height: 300px;
@@ -283,7 +284,10 @@ h2 {
     padding: 10px;
     border-radius: 25px;
 }
-
+.theme-btn:hover {
+    animation: card-hover 0.15s ease;
+    transform: scale(1.025);
+}
 h3 {
     font-family: "Geist Mono", monospace;
 }
