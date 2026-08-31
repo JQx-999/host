@@ -321,11 +321,13 @@ h3 {
     align-items: center;
     flex-direction: column;
     gap: 12px;
-
+    padding-bottom: 5px;
 }
 #news-feed {
     width: 80vw;
+    max-width: 1000px;
     height: 90vh;
+    max-height: 1000px;
     background-color: var(--card-background);
     border-radius: 25px;
     overflow: scroll;
