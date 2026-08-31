@@ -40,6 +40,7 @@ h1 {
     align-items: center;
 }
 .content {
+    animation: card-entry 0.5s ease-in;
     display: grid;
     place-items: center;
     grid-template-columns: auto;
@@ -48,7 +49,26 @@ h1 {
     align-items: center;
     margin-bottom: 25px;
 }
+@keyframes card-entry {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes card-hover {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.025);
+    }
+}
 .card {
+    transform: scale(1);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,6 +86,8 @@ h1 {
 
 .card:hover {
     box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.15);
+    animation: card-hover 0.15s ease-in;
+    transform: scale(1.025);
 }
 #last {
     max-height: 300px;
@@ -195,6 +217,11 @@ h2 {
     overflow: scroll;
     display: block;
 }
+#stats h3 {
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+}
 .stat-with-percentage {
     display: flex;
     flex-direction: row;
@@ -209,12 +236,24 @@ h2 {
     padding: 0;
     height: 20px;
     margin-right: 10px;
+    overflow: hidden;
+}
+@keyframes stat-fill-animation {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 .fill {
-
+    animation: stat-fill-animation 0.75s ease-in;
+    font-weight: bold;
     background-color: mediumspringgreen;
-    color: transparent;
-    border-radius: 25px;
+    color: rgba(100, 100, 100, 0.5);
+    border-radius: 0px;
     height: 20px;
 }
 #fill1 {
