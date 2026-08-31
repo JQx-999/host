@@ -119,3 +119,42 @@ document.addEventListener('keydown', (e) => {
     document.querySelector('input[name="q"]').focus();
   }
 });
+async function loadNewsFeed() {
+  const container = document.getElementById('news-container');
+  const rssUrl = 'https://feeds.bbci.co.uk/news/rss.xml';
+  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    if (data.status === 'ok') {
+      container.innerHTML = '';
+      data.items.slice(0, 10).forEach(item => {
+        const article = document.createElement('a');
+        article.className = 'news-item';
+        article.href = item.link;
+        article.target = '_blank';
+        const imageUrl = item.thumbnail || item.enclosure?.link || 'https://via.placeholder.com/65?text=News';
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = item.description || '';
+        const cleanDescription = tempDiv.textContent || tempDiv.innerText || 'No description available.';
+        article.innerHTML = `
+          <img class="news-thumb" src="${imageUrl}" alt="News thumbnail" />
+          <div class="news-text">
+            <h3 class="news-title">${item.title}</h3>
+            <p class="news-desc">${cleanDescription}</p>
+          </div>
+        `;
+
+        container.appendChild(article);
+      });
+    } else {
+      container.innerHTML = '<p class="loading">Failed to load news feed.</p>';
+    }
+  } catch (error) {
+    console.error('Error fetching news:', error);
+    container.innerHTML = '<p class="loading">Network error loading news.</p>';
+  }
+}
+loadNewsFeed();
