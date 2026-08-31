@@ -296,6 +296,7 @@ h2 {
 .theme-btn:hover {
     animation: card-hover 0.15s ease;
     transform: scale(1.025);
+    outline: solid 2px rgba(150, 150, 150, 0.25);
 }
 h3 {
     font-family: "Geist Mono", monospace;
