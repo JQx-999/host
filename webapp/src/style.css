@@ -123,7 +123,10 @@ h2 {
     border-radius: 50px;
     outline: none;
     box-shadow: 0px 0px 10px cyan;
-
+}
+#profile:hover {
+    animation: card-hover 0.15s ease-in;
+    transform: scale(1.025);
 }
 #details {
     font-family: "BBH Bartle", sans-serif;
