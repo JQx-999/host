@@ -340,6 +340,7 @@ h3 {
     margin: 10px;
     gap: 10px;
     margin-bottom: 25px;
+    box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.1);
 }
 #centering-news {
     display: flex;
