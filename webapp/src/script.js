@@ -207,3 +207,7 @@ let grid = GridStack.init({
   cellWidth: 200,
   margin: 5
 });
+if (window.innerWidth < 768) {
+  grid.enableMove(false);
+  grid.enableResize(false);
+}
