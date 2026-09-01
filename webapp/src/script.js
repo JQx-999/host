@@ -201,3 +201,9 @@ if (isCarouselActive) {
 } else {
   stopCarousel();
 }
+let grid = GridStack.init({
+  column: 12,
+  cellHeight: 100,
+  cellWidth: 200,
+  margin: 5
+});

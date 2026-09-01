@@ -43,16 +43,7 @@ h1 {
     justify-content: center;
     align-items: center;
 }
-.content {
-    animation: card-entry 0.5s ease-in;
-    display: grid;
-    place-items: center;
-    grid-template-columns: auto;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 25px;
-}
+
 @keyframes card-entry {
     from {
         opacity: 0;
@@ -74,50 +65,7 @@ h1 {
         transform: scale(1.025);
     }
 }
-.card {
-    transform: scale(1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px 10px;
-    background-color: var(--card-background);
-    border-radius: 25px;
-    max-width: 250px;
-    width: 80vw;
-    max-height: 250px;
-    height: 80vw;
-    overflow: hidden;
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.1);
-}
-.card:hover {
-    box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.15);
-    animation: card-hover 0.15s ease-in;
-    transform: scale(1.025);
-    outline: solid 3px rgba(150, 150, 150, 0.25);
-}
-#last {
-    max-height: 300px;
-    padding: 0;
-    max-width: 100%;
-}
-#search {
-    max-height: 200px;
-    max-width: 100%;
-    padding: 0;
-    align-items: center;
-}
-#search-form {
-    width: 70%;
-}
-#search-input {
-    background-color: var(--stat-color);
-    color: var(--text-primary);
-}
-#spotify {
-    width: 100%;
-}
+
 h2 {
     font-family: "BBH Bartle", sans-serif;
     font-weight: 400;
@@ -137,26 +85,45 @@ h2 {
     animation: card-hover 0.15s ease-in;
     transform: scale(1.025);
 }
+
+#centering-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-stack {
+  background: transparent;
+  width: 80vw;
+  max-width: 1000px;
+  min-height: 100px;
+}
+
+
+
+#profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    outline: none;
+    box-shadow: 0px 0px 10px cyan;
+}
+#profile:hover {
+    animation: card-hover 0.15s ease-in;
+    transform: scale(1.025);
+}
 #details {
     font-family: "BBH Bartle", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 #weather {
-    font-size: 10px;
+    font-size: 15px;
     transition: background 1.5s ease-in-out;
     color: var(--weather-color);
 }
-#temperature {
-    font-size: 20px;
-    font-weight: bold;
-}
-#weather-condition {
+#weather h2{
     font-size: 15px;
-}
-.item {
-    margin-bottom: 10px;
-    padding: 0;
 }
 #stats {
     overflow: scroll;
@@ -177,12 +144,6 @@ h2 {
     margin-top: 25px;
     padding: 0;
 }
-#stats:hover {
-    .fill {
-            animation: stat-fill-animation 0.45s ease-in;
-            background-image: linear-gradient(90deg,rgba(0, 250, 154, 1) 50%, rgba(247, 255, 0, 1) 100%);
-    }
-}
 .stat-with-percentage {
     display: flex;
     flex-direction: row;
@@ -198,16 +159,6 @@ h2 {
     height: 20px;
     margin-right: 10px;
     overflow: hidden;
-}
-@keyframes stat-fill-animation {
-    from {
-        opacity: 0;
-        transform: translateX(-250px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }
 .fill {
     /*animation: stat-fill-animation 0.75s ease-in;*/
@@ -230,6 +181,12 @@ h2 {
 #fill4 {
     width: 100%;
 }
+#stats:hover {
+    .fill {
+            animation: stat-fill-animation 0.45s ease-in;
+            background-image: linear-gradient(90deg,rgba(0, 250, 154, 1) 50%, rgba(247, 255, 0, 1) 100%);
+    }
+}
 #clock-symbol {
     font-size: 100px;
 }
@@ -238,7 +195,7 @@ h2 {
 }
 #buttons {
     display: flex;
-    max-width: 250px;
+    max-width: 500px;
     width: 80vw;
 
     flex-direction: column;
@@ -258,6 +215,54 @@ h2 {
     transform: scale(1.025);
     outline: solid 2px rgba(150, 150, 150, 0.25);
 }
+h3 {
+    font-family: "Geist Mono", monospace;
+}
+#spotify {
+    width: 100%;
+}
+#last {
+    max-height: 100%;
+    padding: 0;
+    max-width: 100%;
+}
+#search {
+    max-height: 200px;
+    max-width: 100%;
+    padding: 0;
+    align-items: center;
+}
+#search-form {
+    width: 70%;
+}
+.grid-stack-item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 10px;
+    background-color: var(--card-background);
+    border-radius: 25px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.1);
+}
+.grid-stack-item-content:hover {
+    box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.15);
+    animation: card-hover 0.15s ease-in;
+    transform: scale(1.025);
+    outline: solid 3px rgba(150, 150, 150, 0.25);
+}
+@keyframes stat-fill-animation {
+    from {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 h3 {
     font-family: "Geist Mono", monospace;
 }

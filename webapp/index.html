@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Command Center</title>
+  <link href="https://cdn.jsdelivr.net/npm/gridstack@9.2.0/dist/gridstack.min.css" rel="stylesheet"/>
   <link rel = "stylesheet" href="src/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,126 +15,146 @@
     <div id="top-header">
         <h1>Control Center</h1>
     </div>
-    <div class="content">
-        <div class="card" id="about">
-            <img src="src/profile.jpg" id="profile">
-            <h2>JQx_999</h2>
-        </div>
-        <div class="card" id="details">
-            <div id="clock">00:00:00</div>
-            <div id="date">Loading date...</div>
-        </div>
-        <div class="card" id="weather">
-            <h2 id="city-name">Detecting location...</h2>
-            <div id = "temperature">--°C</div>
-            <div id="weather-condition">--</div>
-        </div>
-        <div class="card" id="stats">
-            <h2>Works</h2>
-            <p id="scroll-text">Scroll to see</p>
-            <div>
-                <div class="item">
-                    <h3>Dragonism</h3>
-                    <div class="stat-with-percentage">
-                        <div class="stat">
-                            <div id="fill1" class="fill">· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · </div>
+    <div id="centering-grid">
+        <div class="grid-stack">
+            <div class="grid-stack-item" gs-id="box-1" gs-x="0" gs-y="0" gs-w="4" gs-h="3">
+                <div class="grid-stack-item-content">
+                    <img src="src/profile.jpg" id="profile">
+                    <h2>JQx_999</h2>
+                </div>
+            </div>
+            <div class="grid-stack-item" gs-id="box-2" gs-x="4" gs-y="0" gs-w="4" gs-h="3">
+                <div class="grid-stack-item-content" id="details">
+                    <div id="clock">00:00:00</div>
+                    <div id="date">Loading date...</div>
+                </div>
+            </div>
+            <div class="grid-stack-item" gs-id="box-3" gs-x="8" gs-y="0" gs-w="4" gs-h="3">
+                <div class="grid-stack-item-content" id="weather">
+                    <h2 id="city-name">Detecting location...</h2>
+                    <div id = "temperature">--°C</div>
+                    <div id="weather-condition">--</div>
+                </div>
+            </div>
+            <div class="grid-stack-item"gs-id="box-4" gs-x="0" gs-y="3" gs-w="4" gs-h="3">
+                <div class="grid-stack-item-content" id="stats">
+                    <h2>Works</h2>
+                    <p id="scroll-text">Scroll to see</p>
+                    <div>
+                        <div class="item">
+                            <h3>Dragonism</h3>
+                            <div class="stat-with-percentage">
+                                <div class="stat">
+                                    <div id="fill1" class="fill">· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · </div>
+                                </div>
+                                <p>20%</p>
+                            </div>
                         </div>
-                        <p>20%</p>
+                        <div class="item">
+                            <h3>Host Website!</h3>
+                            <div class="stat-with-percentage">
+                                <div class="stat">
+                                    <div id="fill2" class="fill">· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · </div>
+                                </div>
+                                <p>50%</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h3>Elan Driver Unofficial</h3>
+                            <div class="stat-with-percentage">
+                                <div class="stat">
+                                    <div id="fill3" class="fill">· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · </div>
+                                </div>
+                                <p>75%</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h3>Drive Encryptor</h3>
+                            <div class="stat-with-percentage">
+                                <div class="stat">
+                                    <div id="fill4" class="fill">· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · </div>
+                                </div>
+                                <p>100%</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="item">
-                    <h3>Host Website!</h3>
-                    <div class="stat-with-percentage">
-                        <div class="stat">
-                            <div id="fill2" class="fill">· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · </div>
-                        </div>
-                        <p>50%</p>
+            </div>
+            <div class="grid-stack-item" gs-id="box-5" gs-x="4" gs-y="3" gs-w="4" gs-h="3">
+                <div class="grid-stack-item-content" id="tasks">
+                    <h2>Tasks:</h2>
+                    <div>
+                        <input type="checkbox">
+                        <span class="checkbox-text">No procrastination!</span>
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <span class="checkbox-text">Study a bit</span>
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <span class="checkbox-text">Code for a while</span>
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <span class="checkbox-text">Learn Rust</span>
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <span class="checkbox-text">Eat a healthy diet</span>
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <span class="checkbox-text">Pump yourself with exercise</span>
                     </div>
                 </div>
-                <div class="item">
-                    <h3>Elan Driver Unofficial</h3>
-                    <div class="stat-with-percentage">
-                        <div class="stat">
-                            <div id="fill3" class="fill">· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · </div>
+            </div>
+            <div class="grid-stack-item" gs-id="box-6" gs-x="8" gs-y="3" gs-w="4" gs-h="3">
+                <div class="grid-stack-item-content" id="wake-up">
+                    <div id="clock-symbol">⏰️</div>
+                    <h2>Wake up early!</h2>
+                </div>
+            </div>
+            <div class="grid-stack-item" gs-id="box-7" gs-x="0" gs-y="6" gs-w="12" gs-h="2">
+                <div class="grid-stack-item-content" id="settings">
+                    <h2>Options</h2>
+                    <div id="buttons">
+                        <div id="mode-switcher">
+                            <button id="theme-toggle" class="btn">
+                                <span id="theme-icon">☀️</span>
+                                <span id="theme-label">Light Mode</span>
+                            </button>
                         </div>
-                        <p>75%</p>
+                        <div>
+                            <button id="carousel-toggle-btn" class="btn">
+                            ⛔ Wallpapers
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="item">
-                    <h3>Drive Encryptor</h3>
-                    <div class="stat-with-percentage">
-                        <div class="stat">
-                            <div id="fill4" class="fill">· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · </div>
-                        </div>
-                        <p>100%</p>
+            </div>
+            <div class="grid-stack-item" gs-id="box-8" gs-x="0" gs-y="9" gs-w="12" gs-h="3">
+                <div class="grid-stack-item-content" id="last">
+                    <div id="spotify">
+                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/7J1uxwnxfQLu4APicE5Rnj?utm_source=generator&si=3490032b4c0541ce" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card" id="tasks">
-            <h2>Tasks:</h2>
-            <div>
-                <input type="checkbox">
-                <span class="checkbox-text">No procrastination!</span>
-            </div>
-            <div>
-                <input type="checkbox">
-                <span class="checkbox-text">Study a bit</span>
-            </div>
-            <div>
-                <input type="checkbox">
-                <span class="checkbox-text">Code for a while</span>
-            </div>
-            <div>
-                <input type="checkbox">
-                <span class="checkbox-text">Learn Rust</span>
-            </div>
-            <div>
-                <input type="checkbox">
-                <span class="checkbox-text">Eat a healthy diet</span>
-            </div>
-            <div>
-                <input type="checkbox">
-                <span class="checkbox-text">Pump yourself with exercise</span>
-            </div>
-        </div>
-        <div class="card" id="wake-up">
-            <div id="clock-symbol">⏰️</div>
-            <h2>Wake up early!</h2>
-        </div>
-        <div class="card" id="settings">
-            <h2>Options</h2>
-            <div id="buttons">
-                <div id="mode-switcher">
-                    <button id="theme-toggle" class="btn">
-                        <span id="theme-icon">☀️</span>
-                        <span id="theme-label">Light Mode</span>
-                    </button>
-                </div>
-                <div>
-                    <button id="carousel-toggle-btn" class="btn">
-                    ⛔ Wallpapers
-                    </button>
+            <div class="grid-stack-item" gs-id="box-9" gs="0" gs-y="12" gs-w="12" gs-h="2">
+                <div class="grid-stack-item-content" id="search">
+                    <h2>Search</h2>
+                    <form id="search-form" action="https://www.google.com/search" method="GET" target="_blank" >
+                      <input
+                        id="search-input"
+                        type="text"
+                        name="q"
+                        placeholder="Search Google..."
+                        required
+                        style="padding: 10px; border-radius: 25px; border: 5px solid rgba(200, 200, 200, 0.10); background-color: var(--stat-color); color: var(--text-primary); width: 100%; margin:0;"
+                      />
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="card" id="last">
-            <div id="spotify">
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/7J1uxwnxfQLu4APicE5Rnj?utm_source=generator&si=3490032b4c0541ce" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-        </div>
-        <div class="card" id="search">
-            <h2>Search</h2>
-            <form id="search-form" action="https://www.google.com/search" method="GET" target="_blank" >
-              <input
-                id="search-input"
-                type="text"
-                name="q"
-                placeholder="Search Google..."
-                required
-                style="padding: 10px; border-radius: 25px; border: 5px solid rgba(200, 200, 200, 0.10); background-color: var(--stat-color); color: var(--text-primary); width: 100%; margin:0;"
-              />
-            </form>
         </div>
     </div>
     <div id="scroll-break">
@@ -151,6 +172,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/gridstack@9.2.0/dist/gridstack-all.js"></script>
     <script src="src/script.js"></script>
 </body>
 </html>
