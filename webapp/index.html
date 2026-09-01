@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="bg-carousel"></div>
     <div id="top-header">
         <h1>Control Center</h1>
     </div>
@@ -102,11 +103,18 @@
         </div>
         <div class="card" id="settings">
             <h2>Options</h2>
-            <div id="mode-switcher">
-                <button id="theme-toggle" class="theme-btn">
-                    <span id="theme-icon">☀️</span>
-                    <span id="theme-label">Light Mode</span>
-                </button>
+            <div id="buttons">
+                <div id="mode-switcher">
+                    <button id="theme-toggle" class="btn">
+                        <span id="theme-icon">☀️</span>
+                        <span id="theme-label">Light Mode</span>
+                    </button>
+                </div>
+                <div>
+                    <button id="carousel-toggle-btn" class="btn">
+                    ⛔ Wallpapers
+                    </button>
+                </div>
             </div>
         </div>
         <div class="card" id="last">

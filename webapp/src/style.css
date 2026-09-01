@@ -15,6 +15,7 @@ body, html {
     --weather-color: rgba(200, 200, 200, 1);
     --stat-color: rgba(255, 255, 255, 0.25);
     --stat-fill-text: rgba(100, 100, 100, 0.5);
+    --carousel-over: rgba(100, 100, 100, 0.5);
 }
 body.light-mode {
   --bg-base: #f3f4f6;
@@ -23,6 +24,7 @@ body.light-mode {
   --card-background: rgba(75, 70, 50, 0.1);
   --stat-color: rgba(0, 0, 0, 0.25);
   --stat-fill-text: rgba(250, 250, 250, 0.5);
+  --carousel-over: rgba(200, 200, 200, 0.25);
 }
 body {
     background-color: var(--bg-base);
@@ -85,6 +87,8 @@ h1 {
     max-height: 250px;
     height: 80vw;
     overflow: hidden;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.1);
 }
 .card:hover {
@@ -150,76 +154,6 @@ h2 {
 #weather-condition {
     font-size: 15px;
 }
-@media only screen and (min-width: 600px) {
-    .content {
-        grid-template-columns: auto auto;
-    }
-    #settings {
-        grid-column: span 2;
-        max-width: 100%;
-        width: 100%;
-        padding: 10px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #last {
-        grid-column: span 2;
-        max-width: 100%;
-        width: 100%;
-        padding: 10px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #search {
-        grid-column: span 2;
-        max-width: 100%;
-        width: 100%;
-        padding: 10px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #news-feed {
-        padding: 50px;
-    }
-}
-@media only screen and (min-width: 900px) {
-    .content {
-        grid-template-columns: auto auto auto;
-    }
-    #settings {
-        grid-column: span 3;
-        max-width: 100%;
-        width: 100%;
-        padding: 10px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #last {
-        grid-column: span 3;
-        max-width: 100%;
-        width: 100%;
-        padding: 10px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #search {
-        grid-column: span 3;
-        max-width: 100%;
-        width: 100%;
-        padding: 10px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #news-feed {
-        padding: 50px;
-    }
-}
 .item {
     margin-bottom: 10px;
     padding: 0;
@@ -243,6 +177,12 @@ h2 {
     margin-top: 25px;
     padding: 0;
 }
+#stats:hover {
+    .fill {
+            animation: stat-fill-animation 0.45s ease-in;
+            background-image: linear-gradient(90deg,rgba(0, 250, 154, 1) 50%, rgba(247, 255, 0, 1) 100%);
+    }
+}
 .stat-with-percentage {
     display: flex;
     flex-direction: row;
@@ -262,7 +202,7 @@ h2 {
 @keyframes stat-fill-animation {
     from {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-250px);
     }
     to {
         opacity: 1;
@@ -270,12 +210,13 @@ h2 {
     }
 }
 .fill {
-    animation: stat-fill-animation 0.75s ease-in;
+    /*animation: stat-fill-animation 0.75s ease-in;*/
     font-weight: bold;
     background-color: rgba(0, 250, 154, 0.75);
     color: var(--stat-fill-text);
     border-radius: 0px;
     height: 20px;
+    box-shadow: 5px 0 10px rgba(255, 255, 255, 0.25);
 }
 #fill1 {
     width: 20%;
@@ -295,7 +236,15 @@ h2 {
 #wake-up h2 {
     font-size: 15px;
 }
-.theme-btn {
+#buttons {
+    display: flex;
+    max-width: 250px;
+    width: 80vw;
+
+    flex-direction: column;
+    gap: 10px;
+}
+.btn {
     background: none;
     border: none;
     outline: none;
@@ -304,7 +253,7 @@ h2 {
     padding: 10px;
     border-radius: 25px;
 }
-.theme-btn:hover {
+.btn:hover {
     animation: card-hover 0.15s ease;
     transform: scale(1.025);
     outline: solid 2px rgba(150, 150, 150, 0.25);
@@ -329,6 +278,8 @@ h3 {
     padding-bottom: 5px;
 }
 #news-feed {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     width: 80vw;
     max-width: 1000px;
     height: 90vh;
@@ -396,4 +347,98 @@ h3 {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+#bg-carousel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+#bg-carousel::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /*background: var(--carousel-over);*/
+}
+@media only screen and (min-width: 600px) {
+    .content {
+        grid-template-columns: auto auto;
+    }
+    #settings {
+        grid-column: span 2;
+        max-width: 100%;
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #last {
+        grid-column: span 2;
+        max-width: 100%;
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #search {
+        grid-column: span 2;
+        max-width: 100%;
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #news-feed {
+        padding: 50px;
+    }
+    #buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .content {
+        grid-template-columns: auto auto auto;
+    }
+    #settings {
+        grid-column: span 3;
+        max-width: 100%;
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #last {
+        grid-column: span 3;
+        max-width: 100%;
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #search {
+        grid-column: span 3;
+        max-width: 100%;
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #news-feed {
+        padding: 50px;
+    }
+    #buttons {
+        flex-direction: row;
+    }
 }

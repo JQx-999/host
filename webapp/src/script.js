@@ -158,3 +158,46 @@ async function loadNewsFeed() {
   }
 }
 loadNewsFeed();
+const images = [
+  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920',
+  'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1920',
+  'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1920'
+];
+
+let currentIndex = 0;
+let carouselInterval = null;
+const bgElement = document.getElementById('bg-carousel');
+const toggleBtn = document.getElementById('carousel-toggle-btn');
+let isCarouselActive = localStorage.getItem('carouselEnabled') === 'true';
+
+function updateBackground() {
+  bgElement.style.backgroundImage = `url('${images[currentIndex]}')`;
+  currentIndex = (currentIndex + 1) % images.length;
+}
+function startCarousel() {
+  updateBackground();
+  carouselInterval = setInterval(updateBackground, 2147483647);
+  bgElement.style.display = 'block';
+  toggleBtn.innerText = '🟢 Wallpaper';
+  localStorage.setItem('carouselEnabled', 'true');
+}
+function stopCarousel() {
+  clearInterval(carouselInterval);
+  carouselInterval = null;
+  bgElement.style.backgroundImage = 'none'; // Reverts back to your default background
+  toggleBtn.innerText = '⛔ Wallpaper';
+  localStorage.setItem('carouselEnabled', 'false');
+}
+toggleBtn.addEventListener('click', () => {
+  isCarouselActive = !isCarouselActive;
+  if (isCarouselActive) {
+    startCarousel();
+  } else {
+    stopCarousel();
+  }
+});
+if (isCarouselActive) {
+  startCarousel();
+} else {
+  stopCarousel();
+}
