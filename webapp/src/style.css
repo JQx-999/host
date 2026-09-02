@@ -341,7 +341,7 @@ h3 {
     -webkit-backdrop-filter: blur(14px);
     width: 80vw;
     max-width: 1000px;
-    height: 90vh;
+    height: 75vh;
     max-height: 1000px;
     background-color: var(--card-background);
     border-radius: 25px;
@@ -349,7 +349,7 @@ h3 {
     padding: 25px;
     margin: 10px;
     gap: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 100px;
     box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.1);
 }
 #centering-news {
