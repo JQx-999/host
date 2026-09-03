@@ -265,3 +265,47 @@ async function startHeaderLoop(elementId) {
 document.addEventListener("DOMContentLoaded", () => {
   startHeaderLoop("headerText");
 });
+function enableGlassTilt(selector = '.grid-stack-item-content') {
+  const cards = document.querySelectorAll(selector);
+
+  cards.forEach(card => {
+    if (!card.querySelector('.glare-overlay')) {
+      const glare = document.createElement('div');
+      glare.classList.add('glare-overlay');
+      card.appendChild(glare);
+    }
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const cardWidth = rect.width;
+      const cardHeight = rect.height;
+
+      const x = e.clientX - rect.left - cardWidth / 3;
+      const y = e.clientY - rect.top - cardHeight / 3;
+      const rotateX = (-y / (cardHeight / 2)) * 5;
+      const rotateY = (x / (cardWidth / 2)) * 5;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      card.style.transition = 'transform 0.05s ease-out';
+      const glare = card.querySelector('.glare-overlay');
+      if (glare) {
+        const glareX = ((e.clientX - rect.left) / cardWidth) * 100;
+        const glareY = ((e.clientY - rect.top) / cardHeight) * 100;
+        glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%)`;
+      }
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      card.style.transition = 'transform 0.5s ease-in-out';
+
+      const glare = card.querySelector('.glare-overlay');
+      if (glare) {
+        glare.style.background = 'none';
+      }
+    });
+  });
+}
+
+// Initialize on document load
+document.addEventListener('DOMContentLoaded', () => {
+  enableGlassTilt();
+});
