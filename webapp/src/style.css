@@ -48,6 +48,7 @@ h1 {
     align-items: center;
 }
 dialog {
+    text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.3);
       border: none;
       border-radius: 30px;
       padding: 24px;
