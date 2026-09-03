@@ -219,3 +219,49 @@ closeBtn.addEventListener('click', () => modal.close());
 modal.addEventListener('click', (e) => {
   if (e.target === modal) modal.close();
 });
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+
+
+async function startHeaderLoop(elementId) {
+  const header = document.getElementById(elementId);
+  if (!header) return;
+
+  if (!header.dataset.originalText) {
+    header.dataset.originalText = header.textContent;
+  }
+  while (true) {
+    header.innerHTML = header.dataset.originalText.replace(
+      /\S/g,
+      "<span class='char'>$&</span>"
+    );
+    await gsap.fromTo(`#${elementId} .char`,
+      {
+        opacity: 0,
+        y: 30,
+        rotateX: -90
+      },
+      {
+        duration: 0.5,
+        opacity: 1,
+        y: 0,
+        rotateX: 0,
+        stagger: 0.05,
+        ease: "back.out(1.7)"
+      }
+    );
+    await delay(7000);
+    await gsap.to(`#${elementId} .char`, {
+      duration: 0.2,
+      opacity: 0,
+      y: -30,
+      rotateX: 90,
+      stagger: 0.03,
+      ease: "power2.in"
+    });
+    await delay(500);
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  startHeaderLoop("headerText");
+});

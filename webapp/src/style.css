@@ -9,7 +9,7 @@ body, html {
 }
 :root {
     --bg-base: rgb(25, 25, 25);
-    --bg-base-gradient: linear-gradient(90deg,rgba(38, 19, 0, 1) 0%, rgba(31, 0, 0, 1) 100%);
+    --bg-base-gradient: linear-gradient(90deg,rgba(25, 19, 0, 1) 0%, rgba(25, 0, 0, 1) 100%);
     --text-primary: white;
     --card-background: rgba(255, 240, 204, 0.1);
     --weather-color: rgba(200, 200, 200, 1);
@@ -37,6 +37,10 @@ h1 {
     font-family: "BBH Bartle", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+.char {
+    display: inline-block;
+    will-change: transform, opacity;
 }
 #top-header {
     display: flex;
@@ -199,6 +203,7 @@ h2 {
   width: 80vw;
   max-width: 1000px;
   min-height: 100px;
+  animation: card-entry 1s ease;
 }
 
 
