@@ -211,3 +211,11 @@ if (window.innerWidth < 768) {
   grid.enableMove(false);
   grid.enableResize(false);
 }
+const modal = document.getElementById('menu');
+const openBtn = document.getElementById('misc');
+const closeBtn = document.getElementById('closeMisc');
+openBtn.addEventListener('click', () => modal.showModal());
+closeBtn.addEventListener('click', () => modal.close());
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) modal.close();
+});
