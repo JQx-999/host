@@ -250,7 +250,7 @@ async function startHeaderLoop(elementId) {
         ease: "back.out(1.7)"
       }
     );
-    await delay(7000);
+    await delay(5000);
     await gsap.to(`#${elementId} .char`, {
       duration: 0.2,
       opacity: 0,
