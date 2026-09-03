@@ -304,8 +304,6 @@ function enableGlassTilt(selector = '.grid-stack-item-content') {
     });
   });
 }
-
-// Initialize on document load
 document.addEventListener('DOMContentLoaded', () => {
   enableGlassTilt();
 });
