@@ -517,7 +517,9 @@ h3 {
         flex-direction: row;
         justify-content: center;
     }
-
+    .misc-btn {
+        top: 25px
+    }
 }
 @media only screen and (min-width: 900px) {
     .content {
@@ -556,5 +558,7 @@ h3 {
     #buttons {
         flex-direction: row;
     }
-
+    .misc-btn {
+        top: 25px
+    }
 }
