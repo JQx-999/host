@@ -417,28 +417,7 @@ a, button, .clickable {
 	justify-content: center;
 }
 
-.bottom-bar {
-	background-color: #21201FCC;
-	 backdrop-filter: blur(20px);
-  	-webkit-backdrop-filter: blur(20px);
-	position: fixed;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: row;
-	bottom: 0;
-	width: max-content;
-	z-index: 999;
-	font-size: 1vh;
-	font-weight: bold;
-	padding: 1vh 5vw 0.25vh 5vw;
-	margin-bottom: 2vw;
-	border: solid 2px #5a4d4534;
-	border-radius: 45px;
-	animation-name: entry;
-	animation-duration: 0.5s;
-	box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.1);
-}
+
 
 @keyframes entry-left {
 	0% {
@@ -453,88 +432,7 @@ a, button, .clickable {
 
 
 
-.button {
-	display: flex;
-	margin: 0 10px;
-	justify-content: center;
-	flex-direction: column;
-	font-family: "Montserrat", sans-serif;
-	align-items: center;
-	overflow: visible;
-}
-.button-icon:hover {
-	animation-name: img-hover;
-		animation-duration: 0.25s;
-		transform: scale(1.02);
-}
-.button-shad {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #5A4D45;
-	border: transparent;
-	border-radius: 100px;
-	width: 50px;
-	padding: 0.75vh 0;
-}
-.button-shad:hover {
-		outline: solid 2px #95954ecc;
-	}
-#icon-button0 {
-	background-color: transparent;
-	background-image: url("mail.svg");
 
-	background-size:100%;
-	background-position: center;
-	overflow: visible;
-	color: transparent;
-	width: 16px;
-	height: 16px;
-	border: transparent;
-
-}
-
-#icon-button1 {
-	background-color: transparent;
-	background-image: url("github.svg");
-
-	background-size:100%;
-	background-position: center;
-	overflow: visible;
-	color: transparent;
-	width: 16px;
-	height: 16px;
-	border: transparent;
-
-}
-
-#icon-button2 {
-	background-color: transparent;
-	background-image: url("terms.svg");
-
-	background-size:100%;
-	background-position: center;
-	overflow: visible;
-	color: transparent;
-	width: 16px;
-	height: 16px;
-	border: transparent;
-
-}
-
-#icon-button3 {
-	background-color: transparent;
-	background-image: url("about.svg");
-
-	background-size:100%;
-	background-position: center;
-	overflow: visible;
-	color: transparent;
-	width: 16px;
-	height: 16px;
-	border: transparent;
-
-}
 
 
 .signature {
@@ -666,6 +564,52 @@ a, button, .clickable {
 		padding: 3vw;
 	}
 }
+
+.bottom-bar {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    border: solid 2px rgba(255, 255, 255, 0.1);
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    backdrop-filter: blur(7px);
+    z-index: 1000;
+    padding: 0.5px;
+    margin: 10px;
+    animation: entry 0.5s ease;
+    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
+}
+#link {
+    padding: 7px 25px;
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    margin: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    font-size: 8px;
+    font-family: sans-serif, serif;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        margin: 0;
+        opacity: 0.65;
+    }
+    p {
+        padding: 0;
+        margin: 0;
+    }
+}
+#link:hover {
+    animation: img-hover 2s ease;
+    transform: scale(1.02);
+}
 @media (min-width: 1200px) {
 	.signature {
 		transform: scale(2.5);
@@ -674,40 +618,19 @@ a, button, .clickable {
 		width: 500px;
 	}
 	.bottom-bar {
+	    right: 1vw;
+					padding: 3px;
 		flex-direction: column;
-		left: 0;
-		height: 100vh;
-		width: 75px;
-		justify-content: center;
-		padding: 0 0.7vw;
-		animation-name: entry-left;
-		font-size: 1.25vh;
-		margin-bottom: 0;
-		border: transparent;
-		border-radius: 0;
-		box-shadow: none;
 	}
-	#icon-button0 {
-		width: 32px;
-		height: 32px;
-	}
-	#icon-button1 {
-		width: 32px;
-		height: 32px;
-	}
-	#icon-button2 {
-		width: 32px;
-		height: 32px;
-	}
-	#icon-button3 {
-		width: 32px;
-		height: 32px;
-	}
-	.button {
-		padding: 1vh 0;
-	}
-	.button-shad {
-		width: 75px;
+	#link {
+	    padding: 10px 12px;
+					margin: 3px;
+					font-size: 10px;
+		img {
+		    width: 25px;
+			height: 25px;
+		}
+
 	}
 	body {
 		padding-left: 100px;
