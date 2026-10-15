@@ -96,7 +96,7 @@ a, button, .clickable {
 		animation-trigger: --t play-forward;
 		timeline-trigger: --t view() entry 100% exit 0% ;
 	display: grid;
-	grid-template-columns: 5fr 1fr;
+	grid-template-columns: 1fr;
 	gap: 10px;
 	align-items: center;
 
@@ -117,33 +117,28 @@ a, button, .clickable {
 		transition: transform 0.3s ease;
 	}
 
-	.pic {
-		margin: 0;
-		background-color: #1C1B1D;
-		background-image: url(profile.jpg);
-		background-size: cover;
-		background-position: center;
-		object-fit: cover;
-		height: 100%;
-
-
-
-
-
-		transform: scale(1);
-	}
-	.pic:hover {
-		animation-name: img-hover;
-		animation-duration: 0.5s;
-		transform: scale(1.02);
-	}
 	.nega {
 		margin: 3vh 3vw;
 		p{
 			margin: 7vh 0;
 		}
 	}
-
+	.pf-img {
+	    height: 200px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		border-radius: 50px;
+		background-color: #1C1B1D;
+	}
+	img {
+	    width: 100%;
+	}
+	img:hover {
+	    animation: img-hover 2s ease;
+		transform: scale(1.02);
+	}
 	.desc {
 		overflow: hidden;
 		display: flex;
@@ -151,8 +146,8 @@ a, button, .clickable {
 		font-family: "Montserrat", sans-serif;
 		border: transparent;
 		border-radius: 50px;
-		height: 100%;
-
+		height: 500px;
+		font-size: 17px;
 		background-color: #1C1B1D;
 		color: #E6E1E3;
 		h1 {
@@ -516,29 +511,7 @@ a, button, .clickable {
 	justify-content: center;
 	align-items: center;
 }
-.pure {
 
-	height: 20vh;
-	animation: entry 0.75s ease-in-out both;
-		animation-trigger: --t play-once;
-		timeline-trigger: --t view() entry 100% exit 0% ;
-	font-family: "Montserrat", sans-serif;
-	background-color: #1d1c1b;
-	margin: 0 2vw;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	max-width: 1000px;
-	width: 100%;
-	border: transparent;
-	border-radius: 50px;
-	font-weight: bold;
-	font-size: 3vh;
-	p {
-		padding: 3vw;
-	}
-}
 .copyright {
 	height: 20vh;
 	animation: entry 0.75s ease-in-out both;
@@ -588,10 +561,10 @@ a, button, .clickable {
     display: flex;
     flex-direction: column;
     font-size: 8px;
-    font-family: sans-serif, serif;
+    font-family: "Montserrat", sans-serif;
     color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: bolder;
     align-items: center;
     justify-content: center;
     img {
@@ -632,13 +605,21 @@ a, button, .clickable {
 		}
 
 	}
-	body {
-		padding-left: 100px;
-	}
+
 	.top-container {
 		margin-bottom: 14vh;
 		grid-template-columns: 3fr 1fr;
+		.pf-img {
+		    height: 500px;
+						padding: 0;
+						overflow: hidden;
+			img{
+                height: 100%;
+                width: auto;
+			}
+		}
 	}
+
 	.showcase {
 		grid-template-columns: 1fr 1fr;
 		padding: 2vw;
@@ -660,4 +641,13 @@ a, button, .clickable {
 	.plus {
 		font-size: 100vh;
 	}
+}
+.space{
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    background-image: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0) 95%, rgba(25, 25, 25, 1) 100%);
+    pointer-events: none;
 }
